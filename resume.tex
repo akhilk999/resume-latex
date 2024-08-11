@@ -1,14 +1,24 @@
 \documentclass{resume} % The Style class
 
-\name {Akhil Kasamsetty}
-\address{Plano, TX}
-\address{(+1) 469-520-4565 \\ akhilkasams@gmail.com}
+\usepackage[options]{hyperref}
 
-\begin{document}
+\newcommand \linkedinicon {\faLinkedin}
+\newcommand \linkedinlink {https://linkedin.com/in/dwight-schrute/}
+\newcommand \linkedintext {/dwight-schrute}
+\newcommand \linkedin {\linkedinicon \hspace{3pt}\href{\linkedinlink}{\linkedintext}}
+
+\begin{document
+
+\begin{center}
+    \textbf{\Huge \scshape Akhil Kasamsetty} \\ \vspace{1pt}
+    \small 469-520-4565 $|$ \href{mailto:akhil.kasamsetty@tamu.edu}{\underline{akhil.kasamsetty@tamu.edu}} $|$ 
+    \href{https://linkedin.com/in/akhil-kasamsetty}{\underline{linkedin.com/in/akhil-kasamsetty}} $|$
+    \href{https://github.com/akhilk999}{\underline{github.com/akhilk999}}
+\end{center}
 
 \begin{rSection}{Education}
 {\bf Texas A \& M University, College Station } \hfill {\em August 2024 - Present} 
-\\ Bachelor of Engineering, General Engineering.\hfill { GPA: N/A }
+\\ Bachelor of Engineering, General Engineering%.\hfill { GPA: N/A }
 \end{rSection}
 
 \begin{rSection}{Career Objective}
@@ -27,7 +37,7 @@
 \begin{tabular}{ @{} >{\bfseries}l @{\hspace{6ex}} l }
 Languages \ & Java, C++, Python, C\#, Dart  \\
 Technologies & Flutter, HTML5, CSS, Latex\\
-Tools & VSCode, IntelliJ, Android Studio,  MikTex\\
+Tools & VSCode, IntelliJ, Android Studio, MikTex\\
 %Databases & PostgreSQL, Firebase\\
 %Cloud Technologies & Firebase, AWS, Google Cloud\\
 Version Control & GitHub
