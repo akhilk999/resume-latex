@@ -1,56 +1,240 @@
-\documentclass{resume} % The Style class
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
 
-\usepackage[options]{hyperref}
+\documentclass[letterpaper,11pt]{article}
 
-\newcommand \linkedinicon {\faLinkedin}
-\newcommand \linkedinlink {https://linkedin.com/in/dwight-schrute/}
-\newcommand \linkedintext {/dwight-schrute}
-\newcommand \linkedin {\linkedinicon \hspace{3pt}\href{\linkedinlink}{\linkedintext}}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+
+\newcommand{\resumeEducation}[6]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}
+        \textbf{\small#5:} {\small#6} \\
+}
+
+
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingNoBulletListStart}{\begin{itemize}[leftmargin=0.15in]}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \begin{document}
 
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
 \begin{center}
     \textbf{\Huge \scshape Akhil Kasamsetty} \\ \vspace{1pt}
-    \small 469-520-4565 $|$ \href{mailto:akhil.kasamsetty@tamu.edu}{\underline{akhil.kasamsetty@tamu.edu}} $|$ 
+    \small 469-520-4565 $|$ \href{mailto:akhilkasams@gmail.com}{\underline{akhilkasams@gmail.com}} $|$ 
     \href{https://linkedin.com/in/akhil-kasamsetty}{\underline{linkedin.com/in/akhil-kasamsetty}} $|$
     \href{https://github.com/akhilk999}{\underline{github.com/akhilk999}}
 \end{center}
 
-\begin{rSection}{Education}
-{\bf Texas A \& M University, College Station } \hfill {\em August 2024 - Present} 
-\\ Bachelor of Engineering, General Engineering%.\hfill { GPA: N/A }
-\end{rSection}
 
-\begin{rSection}{Career Objective}
- To improve my programming skills and knowledge through project development in a variety of subfields
-\end{rSection}
+%-----------EDUCATION-----------
 
-\begin{rSection}{Projects}
-{\bf Legal AI Assistant}
-\\This project..
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeEducation
+      {Texas A\&M University}{May 2028}
+      {Bachelor of Science in Computer Science}{GPA: 4.00}
+      {Relevant Coursework}{Engineering Lab I - Computation (Intro to Python), Experimental Physics and Engineering Lab II - Mechanics, Program Design and Concepts (Intro to C++)}
+  \resumeSubHeadingListEnd
 
-{\bf FooDono}
-\\This project...
-\end{rSection}
 
-\begin{rSection}{Technical Strengths}
-\begin{tabular}{ @{} >{\bfseries}l @{\hspace{6ex}} l }
-Languages \ & Java, C++, Python, C\#, Dart  \\
-Technologies & Flutter, HTML5, CSS, Latex\\
-Tools & VSCode, IntelliJ, Android Studio, MikTex\\
-%Databases & PostgreSQL, Firebase\\
-%Cloud Technologies & Firebase, AWS, Google Cloud\\
-Version Control & GitHub
-\end{tabular}
-\end{rSection}
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Webmaster/Robotics Engineer}{Aug. 2024 -- Present}
+      {Aggie Robotics - VEXU Team WHOOP}{College Station, TX}
+      \resumeItemListStart
+        \resumeItem{Designed 10+ autonomous routes to position the robot and pick up and place items during matches.}
+        \resumeItem{Implemented robot routes using C++ and the PROS VEX library to integrate with a motion sensor, optical sensor, IMU gyroscope sensors, and through bore encoders for robot localization and game strategy.}
+        \resumeItem{Designed and built processor mount and clamping mechanism hardware using Autodesk Fusion 360.}
+        \resumeItem{Team Accomplishments: Excellence Award and Robot Skills Champion @ Texas VEXU Robotics Competition, Energy Award, \#2 Seed, and Top 8 Teams in Math Division @ 2025 VEX Robotics World Championship}
+      \resumeItemListEnd
+    \resumeSubheading
+      {Lead Python Curriculum Officer}{Aug. 2023 -- May 2024}
+      {AIFA - AI For All }{Plano, TX}
+      \resumeItemListStart
+        \resumeItem{Led a team of 6 officers to create educational slideshows teaching Python to students at various high schools.}
+        \resumeItem{Hosted an AI-based hackathon with 150+ participants at the \emph{University of Texas at Dallas.}}
+      \resumeItemListEnd
+      
+% -----------Multiple Positions Heading-----------
+%    \resumeSubSubheading
+%     {Software Engineer I}{Oct 2014 - Sep 2016}
+%     \resumeItemListStart
+%        \resumeItem{Apache Beam}
+%          {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines}
+%     \resumeItemListEnd
+%    \resumeSubHeadingListEnd
+%-------------------------------------------
 
-\begin{rSection}{Experience}
-\begin{rSubsection}{Company}{Mon 20XX - Mon 20XX}{Role}{}
- \item Created...
-\end{rSubsection}
-\begin{rSubsection}{Company}{Mon 20XX - Mon 20XX}{Role}{}
- \item Created...
-\end{rSubsection}
-\end{rSection}
+    \resumeSubheading
+      {Vice President/ Team Captain}{May 2021 -- May 2024}
+      {Plano West Robotics - FTC Teams 14523, 12977}{Plano, TX}
+      \resumeItemListStart
+        \resumeItem{Led a team of 10+ engineers to design robot architecture and components in Autodesk Fusion 360.}
+        \resumeItem{Increased development speed by 40\% by implementing team meetings and adding a Kanban board to track tasks.}
+        \resumeItem{Hosted 10+ workshops and scrimmages for 1500+ people to help promote STEM throughout the community.}
+        \resumeItem{Team Accomplishments: Inspire Award 2nd @ F\&E Qualifier, Finalist Alliance @ Texas UIL State Championship.}
+    \resumeItemListEnd
 
+    \resumeSubheading
+      {Webmaster/Computer Science Tutor}{Feb. 2023 -- Oct. 2023}
+      {Bloom Institute}{Virtual}
+      \resumeItemListStart
+        \resumeItem{Managed the website of an organization that hosts free year-round virtual classes for 200+ students.}
+        \resumeItem{Designed and restructured website using WordPress to improve the layout and user experience.}
+        \resumeItem{Tutored 50+ students in Python for a weekly class over the summer.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{SecureSimple}}{Nov. 2024 -- Nov. 2024}
+          \resumeItemListStart
+            \resumeItem{Worked with a team of 4 to design an electronic security system with an alarm and activation system in Multisim.}
+            \resumeItem{Won 2nd Place in the SEC Ignite Design Challenge Electrical Engineering category.}
+            \resumeItem{Created project report and video presentation on electronic security systems and our proposed product.}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{Legal AI Assistant} $|$ \emph{\url{https://github.com/akhilk999/Legal-AI-Assistant_backend}}}{Jun. 2024 -- Aug. 2024}
+          \resumeItemListStart
+            \resumeItem{Developed data extractor for Indian legal case file PDFs using Python and OpenAI API.}
+            \resumeItem{Designed and implemented 4+ complete app wireframes using Figma and Flutter.}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{FooDono} $|$ \emph{\url{https://github.com/akhilk999/FooDono}}}{Aug. 2020 -- Dec. 2020}
+          \resumeItemListStart
+            \resumeItem{Developed a mobile app to connect food banks to their visitors using Flutter, Firebase, and the Google Maps API.}
+            \resumeItem{Won Honorable Mention in the Congressional App Challenge TX District 3.}
+            \resumeItem{Added support for food banks to post available time slots and visitors to sign up for them, reducing overcrowding.}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+
+
+%
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: Java, Python, Dart, C++, C\#, SQL (Postgres), JavaScript, HTML,CSS} \\
+     \textbf{Frameworks}{: Flutter, Next.js, Tailwind CSS, WordPress, Material-UI, Bootstrap} \\
+     \textbf{Developer Tools}{: Git, AWS, Figma, Android Studio, VS Code, TeXLive} \\
+     \textbf{Libraries}{: NumPy, Matplotlib, Pandas, React} \\
+     %\textbf{Software}{: Fusion 360, Blender, Figma, DaVinci Resolve, Photoshop} \\
+     %\textbf{Libraries}{: pandas, NumPy, Matplotlib}
+    }}
+ \end{itemize}
+
+
+%-------------------------------------------
 \end{document}
