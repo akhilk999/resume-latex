@@ -1,0 +1,62 @@
+%==============================================================================
+% VARIANT: Master
+% Full resume matching the original single-file content.
+%
+% Compile from the resume/ directory:
+%   pdflatex -jobname=master variants/master.tex
+%   latexmk -pdf -jobname=master variants/master.tex
+%==============================================================================
+
+\documentclass{resume}
+
+%------------------------------------------------------------------------------
+% 1) Load bullet on/off flags (all ON by default)
+%------------------------------------------------------------------------------
+\input{bullets/flags}
+
+%------------------------------------------------------------------------------
+% 2) Bullet selection — turn off individual bullets as needed, e.g.:
+%    \baBulletBfalse
+%    \khBulletAfalse
+%------------------------------------------------------------------------------
+% (all bullets enabled for Master)
+
+%------------------------------------------------------------------------------
+% 3) Skills — override categories for this variant if needed
+%    Example: \renewcommand{\SkillsLanguages}{Python, Go, SQL, TypeScript}
+%------------------------------------------------------------------------------
+\newcommand{\SkillsContent}{\input{sections/skills}}
+
+%------------------------------------------------------------------------------
+% 4) Experience — include/reorder by editing this list only
+%    Available: broadaxis, ta, konfhub, robotics, preseed
+%------------------------------------------------------------------------------
+\newcommand{\ExperienceEntries}{%
+  \input{sections/experience/broadaxis}%
+  \input{sections/experience/ta}%
+  \input{sections/experience/konfhub}%
+  \input{sections/experience/robotics}%
+  % \input{sections/experience/preseed}%
+}
+
+%------------------------------------------------------------------------------
+% 5) Leadership — optional section (off by default on Master)
+%    Available: sections/leadership/csa
+%    Enable with: \ShowLeadershiptrue
+%------------------------------------------------------------------------------
+\newcommand{\LeadershipEntries}{%
+  % \input{sections/leadership/csa}%
+}
+
+%------------------------------------------------------------------------------
+% 6) Projects — include/reorder by editing this list only
+%    Available: csa, securesimple, foodono, legal-ai
+%------------------------------------------------------------------------------
+\newcommand{\ProjectEntries}{%
+  \input{sections/projects/csa}%
+  \input{sections/projects/securesimple}%
+  \input{sections/projects/foodono}%
+  % \input{sections/projects/legal-ai}%
+}
+
+\input{main}

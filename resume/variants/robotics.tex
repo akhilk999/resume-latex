@@ -1,0 +1,46 @@
+%==============================================================================
+% VARIANT: Robotics
+% Tailor experiences, bullets, skills, and project order for robotics roles.
+%
+% Compile from the resume/ directory:
+%   pdflatex -jobname=robotics variants/robotics.tex
+%   latexmk -pdf -jobname=robotics variants/robotics.tex
+%
+% CUSTOMIZE BELOW — content currently mirrors Master; adjust for robotics focus.
+%==============================================================================
+
+\documentclass{resume}
+\input{bullets/flags}
+
+%------------------------------------------------------------------------------
+% Bullet selection / ordering tips
+%------------------------------------------------------------------------------
+% Move robotics experience to the top of \ExperienceEntries when ready.
+% Alternate hardware bullet is preserved as a comment in bullets/robotics.tex.
+
+%------------------------------------------------------------------------------
+% Skills — emphasize C++ / systems when ready
+%------------------------------------------------------------------------------
+% \renewcommand{\SkillsLanguages}{C++, Python, Go, SQL, TypeScript}
+% \renewcommand{\SkillsFrameworks}{NumPy, Pandas, Matplotlib, FastAPI, Flask, React}
+% \renewcommand{\SkillsCloud}{PostgreSQL, Azure App Service, AWS (Amazon Bedrock), Supabase, Firebase}
+% \renewcommand{\SkillsTools}{Git, GitHub, Postman, Node.js, MCP, Vercel}
+\newcommand{\SkillsContent}{\input{sections/skills}}
+
+%------------------------------------------------------------------------------
+% Experience / Leadership / Projects
+%------------------------------------------------------------------------------
+\newcommand{\ExperienceEntries}{%
+  \input{sections/experience/broadaxis}%
+  \input{sections/experience/ta}%
+  \input{sections/experience/konfhub}%
+  \input{sections/experience/robotics}%
+}
+\newcommand{\LeadershipEntries}{}
+\newcommand{\ProjectEntries}{%
+  \input{sections/projects/csa}%
+  \input{sections/projects/securesimple}%
+  \input{sections/projects/foodono}%
+}
+
+\input{main}

@@ -1,0 +1,47 @@
+%==============================================================================
+% VARIANT: Backend SWE
+% Tailor experiences, bullets, skills, and project order for backend roles.
+%
+% Compile from the resume/ directory:
+%   pdflatex -jobname=backend variants/backend.tex
+%   latexmk -pdf -jobname=backend variants/backend.tex
+%
+% CUSTOMIZE BELOW — content currently mirrors Master; adjust for backend focus.
+%==============================================================================
+
+\documentclass{resume}
+\input{bullets/flags}
+
+%------------------------------------------------------------------------------
+% Bullet selection (Backend-focused examples — uncomment to apply)
+%------------------------------------------------------------------------------
+% \baBulletBfalse          % drop AI pipeline bullet; keep APIs + CI/CD
+% \khBulletAfalse          % drop agentic-AI narrative; keep Flask APIs
+% \khBulletBfalse
+
+%------------------------------------------------------------------------------
+% Skills — emphasize backend stack when ready
+%------------------------------------------------------------------------------
+% \renewcommand{\SkillsLanguages}{Python, Go, SQL, TypeScript, JavaScript, C++}
+% \renewcommand{\SkillsFrameworks}{FastAPI, Flask, React, Next.js, Bootstrap}
+% \renewcommand{\SkillsCloud}{PostgreSQL, Azure App Service, Azure DevOps, Azure PostgreSQL, AWS (Amazon Bedrock), Supabase, Firebase}
+% \renewcommand{\SkillsTools}{Git, GitHub, Postman, Node.js, MCP, Vercel}
+\newcommand{\SkillsContent}{\input{sections/skills}}
+
+%------------------------------------------------------------------------------
+% Experience / Leadership / Projects
+%------------------------------------------------------------------------------
+\newcommand{\ExperienceEntries}{%
+  \input{sections/experience/broadaxis}%
+  \input{sections/experience/ta}%
+  \input{sections/experience/konfhub}%
+  \input{sections/experience/robotics}%
+}
+\newcommand{\LeadershipEntries}{}
+\newcommand{\ProjectEntries}{%
+  \input{sections/projects/csa}%
+  \input{sections/projects/securesimple}%
+  \input{sections/projects/foodono}%
+}
+
+\input{main}

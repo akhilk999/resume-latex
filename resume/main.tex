@@ -1,0 +1,53 @@
+%------------------------------------------------------------------------------
+% main.tex — shared document body for all resume variants
+%
+% Do not compile this file directly. Compile a variant instead, e.g.:
+%   pdflatex -jobname=master variants/master.tex
+%
+% Expected macros (defined by each variant before \input{main}):
+%   \ExperienceEntries  — ordered \input{sections/experience/...} list
+%   \ProjectEntries     — ordered \input{sections/projects/...} list
+%   \SkillsContent      — usually \input{sections/skills}
+% Optional:
+%   \LeadershipEntries  — ordered leadership inputs (requires \ShowLeadershiptrue)
+%------------------------------------------------------------------------------
+
+\begin{document}
+
+%----------HEADING----------
+\input{sections/header}
+
+%-----------EDUCATION-----------
+\section{Education}
+\input{sections/education}
+
+%-----------EXPERIENCE-----------
+% Order and inclusion controlled by \ExperienceEntries in the variant file.
+\section{Experience}
+  \resumeSubHeadingListStart
+    \ExperienceEntries
+  \resumeSubHeadingListEnd
+
+%-----------LEADERSHIP (optional)-----------
+% Enable in a variant with: \ShowLeadershiptrue
+% then define \LeadershipEntries.
+\ifShowLeadership
+\section{Leadership}
+  \resumeSubHeadingListStart
+    \LeadershipEntries
+  \resumeSubHeadingListEnd
+\fi
+
+%-----------PROJECTS-----------
+% Order and inclusion controlled by \ProjectEntries in the variant file.
+\section{Projects}
+    \resumeSubHeadingListStart
+      \ProjectEntries
+    \resumeSubHeadingListEnd
+
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+\SkillsContent
+
+%-------------------------------------------
+\end{document}
