@@ -4,6 +4,9 @@ Design document for a long-term, engineering-style career management system.
 
 This repository is not only a place to store a resume. It is the single system for documenting experiences, generating targeted resumes, preparing for interviews, analyzing job descriptions, and tracking career growth over time.
 
+**Start here for agents/humans new to the repo:** [../README.md](../README.md)  
+**How to run extraction prompts:** [../prompts/README.md](../prompts/README.md)
+
 ---
 
 # Purpose
@@ -18,7 +21,7 @@ Treating career management like software engineering means:
 - **Single source of truth** instead of copy-pasted variants
 - **Modular composition** — resume bullets, interview stories, and portfolio write-ups derive from the same experience records
 - **Pipelines** — extract → structure → select → generate, rather than rewrite from scratch for every application
-- **Automation** where repetition is mechanical (variant generation, quality checks, keyword matching)
+- **Automation** where repetition is mechanical (variant generation, quality checks, keyword matching) — later QoL; see [AUTOMATION_ROADMAP.md](./AUTOMATION_ROADMAP.md)
 
 The goal is a maintainable system that compounds: each new internship, project, or interview makes the next application faster and more accurate.
 
@@ -50,48 +53,32 @@ When interview answers contradict the resume, credibility suffers. When portfoli
 
 # Repository Architecture
 
-Intended long-term layout (target state). The current `resume/` tree is the working resume pipeline; directories below such as `experiences/`, `interviews/`, and `prompts/` are the designed expansion of this knowledge base.
+Current layout (repository root):
 
 ```
-career/   # or repository root as the system matures
-│
-├── docs/
-│   ├── CAREER_KNOWLEDGE_BASE.md
-│   ├── RESUME_WORKFLOW.md
-│   ├── RESUME_STYLE_GUIDE.md
-│   ├── JOB_DESCRIPTION_ANALYSIS.md
-│   └── AUTOMATION_ROADMAP.md
-│
-├── resume/
-│   ├── main.tex
-│   ├── variants/
-│   ├── bullets/
-│   ├── sections/
-│   └── templates/
-│
-├── experiences/
-│   ├── broadaxis/
-│   ├── konfhub/
-│   ├── csa/
-│   ├── robotics/
-│   ├── teaching_assistant/
-│   ├── securesimple/
-│   └── foodono/
-│
-├── interviews/
-│   ├── STAR_STORIES.md
-│   ├── TECHNICAL_DECISIONS.md
-│   ├── SYSTEM_DESIGN.md
-│   └── BEHAVIORAL.md
-│
-├── job_descriptions/
-│
-├── prompts/
-│
-├── scripts/
-│
-└── portfolio/
+├── README.md                 # Repo entrypoint
+├── docs/                     # System manuals
+├── experiences/              # Canonical experience records (present)
+├── prompts/                  # Versioned AI prompts (present)
+├── resume/                   # LaTeX compile / variants (present)
+├── job_descriptions/         # JD notes — next active workflow step
+├── interviews/               # Cross-cutting interview distillations (scaffolded)
+├── scripts/                  # Automation home (QoL later; README only for now)
+└── portfolio/                # Future public write-ups (not created yet)
 ```
+
+## Directory status
+
+| Path | Status | Notes |
+|------|--------|--------|
+| `docs/` | Active | Architecture, workflow, style, JD method, automation roadmap |
+| `experiences/` | Active | Source of truth for facts / ownership / metrics |
+| `prompts/` | Active | Runbook: [prompts/README.md](../prompts/README.md) |
+| `resume/` | Active | PDF generation; bullets are *derived* |
+| `job_descriptions/` | Active scaffold | Next step: analyze JDs into notes |
+| `interviews/` | Scaffolded | Populate after experiences + as JD targeting clarifies stories |
+| `scripts/` | Placeholder | Implement later per AUTOMATION_ROADMAP |
+| `portfolio/` | Not created | Optional later |
 
 ## Directory purposes
 
@@ -101,7 +88,7 @@ System design and operating manuals. Architecture, workflow, style rules, job-an
 
 ### `resume/`
 
-LaTeX resume generation pipeline: shared body, bullet banks, section headers, and role-targeted variants. Compiles PDFs; does not own the full narrative of each experience.
+LaTeX resume generation pipeline: shared body, bullet banks, section headers, and role-targeted variants. Compiles PDFs; does not own the full narrative of each experience. See [resume/README.md](../resume/README.md).
 
 | Path | Purpose |
 |------|---------|
@@ -109,7 +96,6 @@ LaTeX resume generation pipeline: shared body, bullet banks, section headers, an
 | `variants/` | Compilable entry points; each selects bullets and emphasis for a target |
 | `bullets/` | Resume-ready bullet library distilled from experience docs |
 | `sections/` | Headers and structural sections (education, skills, experience shells) |
-| `templates/` | Reusable LaTeX fragments and future template variants |
 
 ### `experiences/`
 
@@ -117,11 +103,11 @@ Canonical documentation for each major role or project. One folder per experienc
 
 ### `interviews/`
 
-Cross-cutting interview preparation distilled from experiences: STAR stories, technical decision write-ups, system design talking points, and behavioral themes. Links back to experience folders for evidence.
+Cross-cutting interview preparation distilled from `experiences/*_INTERVIEW_GUIDE.md`: STAR stories, technical decisions, system design talking points, behavioral themes. Do not invent claims here.
 
 ### `job_descriptions/`
 
-Stored and annotated job descriptions (or representative samples) used for keyword mining, variant recommendation, and gap analysis. Prefer structured notes over one-off sticky notes.
+Stored and annotated job descriptions (or representative samples) for keyword mining, variant recommendation, and gap analysis. See [JOB_DESCRIPTION_ANALYSIS.md](./JOB_DESCRIPTION_ANALYSIS.md) and [`job_descriptions/README.md`](../job_descriptions/README.md).
 
 ### `prompts/`
 
@@ -129,11 +115,11 @@ Version-controlled AI prompts for extraction, analysis, bullet generation, JD an
 
 ### `scripts/`
 
-Automation: build variants, lint resume quality, match JDs to bullets, and (later) career analytics. See [AUTOMATION_ROADMAP.md](./AUTOMATION_ROADMAP.md).
+Future automation: build variants, lint resume quality, match JDs to bullets, career analytics. Placeholder README only until QoL work begins. See [AUTOMATION_ROADMAP.md](./AUTOMATION_ROADMAP.md).
 
 ### `portfolio/`
 
-Long-form or public-facing write-ups derived from the same experience records. Keeps portfolio claims aligned with resume and interview material.
+Long-form or public-facing write-ups derived from the same experience records (future).
 
 ---
 
@@ -155,47 +141,43 @@ experiences/broadaxis/
 └── REFERENCES/
 ```
 
-Use a consistent short-slug prefix within each folder (e.g. `BROADAXIS_`). Do not invent parallel bare names (`ACCOMPLISHMENTS.md`) once prefixes are established.
+Use a consistent short-slug prefix within each folder (e.g. `BROADAXIS_`).
 
 ## File and folder roles
 
 ### `*_CONTEXT.md`
 
-Project-specific instructions written **before** extraction prompts. Overview (what/why/who), personal ownership boundaries, constraints (team, timeline, tech), and hard rules (e.g. git history inaccurate, do not attribute Branding). Source of truth for ownership; every later prompt reads this file.
+Project-specific instructions written **before** extraction prompts. Overview (what/why/who), personal ownership boundaries, constraints (team, timeline, tech), and hard rules. **Source of truth for ownership**; every later prompt reads this file.
 
 ### `*_ACCOMPLISHMENTS.md`
 
-Structured accomplishment database from `prompts/extract/extract_accomplishments.md`. Per accomplishment: What I Built, Technical Implementation, Engineering Challenge, Impact, Evidence, Tags. Primary input to bullets, metrics, and job matching. Not polished resume prose.
+Structured accomplishment database. Per accomplishment: What I Built, Technical Implementation, Engineering Challenge, Impact, Evidence, Tags. Not polished resume prose.
 
 ### `*_SYSTEM_DESIGN.md`
 
-Interview-ready architecture from `prompts/document/create_system_design.md`: Overview, Architecture, Components, Data Flow, Database Design, APIs, Authentication/Security, Infrastructure, Automation, AI Systems, Engineering Decisions, Tradeoffs, Future Improvements. Only technically supported information.
+Interview-ready architecture. Only technically supported information.
 
 ### `*_INTERVIEW_GUIDE.md`
 
-Spoken prep from `prompts/document/create_interview_guide.md`: Project Summary, My Role, Technical Challenges (Situation / Problem / Solution / Tradeoffs / Result), Debugging Stories, Architecture Decisions, Lessons Learned, Behavioral Stories, Potential Interview Questions.
+Spoken prep: Project Summary, My Role, Technical Challenges, Debugging Stories, Architecture Decisions, Lessons Learned, Behavioral Stories, Potential Interview Questions.
 
 ### `*_BULLETS.md`
 
-Resume bullet candidates from `prompts/resume/generate_bullet_bank.md`, grouped by target: Backend SWE, Full Stack SWE, AI/ML, Robotics, Product. Formula: Accomplished X as measured by Y by doing Z. Staging before LaTeX in `resume/bullets/`.
+Resume bullet **candidates** (staging). Promote into `resume/bullets/` for PDFs.
 
 ### `METRICS.md`
 
-Measurable facts from `prompts/document/create_metrics.md`: Technical Metrics, Business Metrics, Awards / Recognition, Metrics To Avoid. Never invent numbers.
+Technical Metrics, Business Metrics, Awards / Recognition, Metrics To Avoid. Never invent numbers.
 
-### `ARCHITECTURE/`
+### `ARCHITECTURE/` / `REFERENCES/`
 
-Diagrams, ADRs, schema sketches, sequence notes, and other technical artifacts too large for a single markdown file.
-
-### `REFERENCES/`
-
-Links to repos, PRs, tickets, docs, demos, and external evidence. Supports “evidence over memory.”
+Diagrams and evidence links.
 
 ---
 
 # Prompts Directory
 
-Reusable AI prompts live under `prompts/` and are version-controlled with the knowledge base. Authoritative usage order: [prompts/README.md](../prompts/README.md).
+Authoritative usage order: [prompts/README.md](../prompts/README.md).
 
 ```
 prompts/
@@ -203,6 +185,8 @@ prompts/
 ├── extract/
 │   ├── analyze_project_context.md
 │   ├── analyze_repository.md
+│   ├── analyze_documents.md
+│   ├── interview_project_context.md
 │   └── extract_accomplishments.md
 ├── document/
 │   ├── create_system_design.md
@@ -214,19 +198,14 @@ prompts/
 ├── jobs/
 │   ├── analyze_job_description.md
 │   └── compare_resume_to_job.md
-└── maintenance/
-    ├── add_new_experience.md
-    └── update_career_timeline.md
+├── maintenance/
+│   ├── add_new_experience.md
+│   └── update_career_timeline.md
+└── other/
+    └── agent_interview.md          # domain example; prefer interview_project_context.md
 ```
 
-## Why version-control prompts
-
-- **Reproducibility** — the same extraction or bullet-generation process can be re-run months later
-- **Improvement** — prompt fixes are reviewable diffs, not lost chat experiments
-- **Shared conventions** — agents and humans follow the same instructions as the workflow docs
-- **Auditability** — when a bullet looks wrong, you can see which prompt produced the draft
-
-Prompts implement the workflows in [RESUME_WORKFLOW.md](./RESUME_WORKFLOW.md) and [JOB_DESCRIPTION_ANALYSIS.md](./JOB_DESCRIPTION_ANALYSIS.md); they do not replace those docs.
+Prompts implement the workflows in [RESUME_WORKFLOW.md](./RESUME_WORKFLOW.md) and [JOB_DESCRIPTION_ANALYSIS.md](./JOB_DESCRIPTION_ANALYSIS.md); they do not replace those docs. **Step order lives in prompts/README.md.**
 
 ---
 
@@ -248,8 +227,8 @@ Prompts implement the workflows in [RESUME_WORKFLOW.md](./RESUME_WORKFLOW.md) an
 
 | Document | Focus |
 |----------|--------|
-| [RESUME_WORKFLOW.md](./RESUME_WORKFLOW.md) | Extraction → accomplishment DB → bullets → variants |
+| [RESUME_WORKFLOW.md](./RESUME_WORKFLOW.md) | Human pipeline: extract → bullets → variants |
 | [RESUME_STYLE_GUIDE.md](./RESUME_STYLE_GUIDE.md) | Formatting and quality bar for resume text |
 | [JOB_DESCRIPTION_ANALYSIS.md](./JOB_DESCRIPTION_ANALYSIS.md) | JD → keywords → matching → variant |
-| [AUTOMATION_ROADMAP.md](./AUTOMATION_ROADMAP.md) | Scripts, checks, and analytics to build later |
-| [prompts/README.md](../prompts/README.md) | Prompt library workflow and experience file checklist |
+| [AUTOMATION_ROADMAP.md](./AUTOMATION_ROADMAP.md) | Scripts and analytics (later QoL) |
+| [prompts/README.md](../prompts/README.md) | Prompt library workflow (runbook SoT) |

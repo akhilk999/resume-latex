@@ -2,7 +2,7 @@
 
 Future tooling plan for the Career Knowledge Base. Nothing here is required to exist yet; this document prioritizes scripts and commands once the documentation and content model in [CAREER_KNOWLEDGE_BASE.md](./CAREER_KNOWLEDGE_BASE.md) are in place.
 
-Intended home: `scripts/` (plus Makefile or CLI entry points as needed).
+Intended home: [`scripts/`](../scripts/) (plus Makefile or CLI entry points as needed). That folder exists with a placeholder README only — **no automation implemented yet** (QoL later). Until then, compile via `resume/` and run pipelines via `prompts/`.
 
 ---
 

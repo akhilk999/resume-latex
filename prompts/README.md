@@ -216,11 +216,13 @@ Bullet bank sections (`Backend SWE`, `Full Stack SWE`, `AI/ML`, `Robotics`, `Pro
 
 For a specific job:
 
-1. Add job description.  
+1. Add a JD note under [`job_descriptions/`](../job_descriptions/) (copy `_templates/JD_ANALYSIS_TEMPLATE.md` into a category folder).  
 2. Run `analyze_job_description.md`.  
 3. Run `compare_resume_to_job.md`.  
 4. Select relevant bullets.  
 5. Update resume variant.
+
+Methodology: [docs/JOB_DESCRIPTION_ANALYSIS.md](../docs/JOB_DESCRIPTION_ANALYSIS.md). Cross-cutting interview distillations (later): [`interviews/`](../interviews/).
 
 ---
 

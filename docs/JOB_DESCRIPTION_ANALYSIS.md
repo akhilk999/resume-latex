@@ -108,39 +108,11 @@ Compile, then spot-check against [RESUME_STYLE_GUIDE.md](./RESUME_STYLE_GUIDE.md
 
 ## Lightweight JD note template
 
-Store under `job_descriptions/` (filename by company-role-date or `category/_template.md`):
+Use the canonical template:
 
-```markdown
-# [Company] — [Role]
+[`job_descriptions/_templates/JD_ANALYSIS_TEMPLATE.md`](../job_descriptions/_templates/JD_ANALYSIS_TEMPLATE.md)
 
-- Category: Backend SWE | Full Stack | AI | Robotics | PM | Solutions
-- Level:
-- Date:
-
-## Keywords
--
-
-## Technologies
--
-
-## Responsibilities
--
-
-## Expected impact
--
-
-## Matches (experience → evidence)
--
-
-## Gaps
--
-
-## Recommended variant
--
-
-## Bullets to enable / emphasize
--
-```
+Copy it into a category folder (`backend/`, `full_stack/`, `ai/`, `robotics/`, `product/`, `solutions/`). See [`job_descriptions/README.md`](../job_descriptions/README.md).
 
 ---
 
@@ -151,4 +123,4 @@ Store under `job_descriptions/` (filename by company-role-date or `category/_tem
 - One strong matched story beats five shallow keyword hits.
 - Reuse category-level notes so each new JD is incremental analysis, not a cold start.
 
-See also: [RESUME_WORKFLOW.md](./RESUME_WORKFLOW.md), [AUTOMATION_ROADMAP.md](./AUTOMATION_ROADMAP.md), [prompts/README.md](../prompts/README.md) (`analyze_job_description.md`, `compare_resume_to_job.md`).
+See also: [RESUME_WORKFLOW.md](./RESUME_WORKFLOW.md), [job_descriptions/README.md](../job_descriptions/README.md), [AUTOMATION_ROADMAP.md](./AUTOMATION_ROADMAP.md), [prompts/README.md](../prompts/README.md) (`analyze_job_description.md`, `compare_resume_to_job.md`).

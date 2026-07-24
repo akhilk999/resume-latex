@@ -3,8 +3,9 @@
 % Based on Jake's Resume template (https://github.com/sb2nov/resume)
 %------------------------------------------------------------------------------
 
-This repository maintains multiple resume variants from one shared codebase.
-Edit content once; each variant chooses what to include and in what order.
+This folder is the **LaTeX compile / selection surface** for resume PDFs.
+
+Career facts, ownership, and bullet *candidates* live in `experiences/` and are produced via `prompts/` — see the repo [README.md](../README.md), [docs/RESUME_WORKFLOW.md](../docs/RESUME_WORKFLOW.md), and [prompts/README.md](../prompts/README.md). Promote candidates into `bullets/*.tex`; variants select what to include and in what order.
 
 ## Structure
 

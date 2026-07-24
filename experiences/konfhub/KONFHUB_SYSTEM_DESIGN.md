@@ -1,7 +1,7 @@
 # KonfHub — System Design
 
 > **Purpose:** Interview-ready system design for the internship POC. Only technically supported information.
-> **Sources:** `KONFHUB_CONTEXT.md`, `KONFHUB_ACCOMPLISHMENTS.md`, `resume/extraction_docs/konfhub.md`
+> **Sources:** `KONFHUB_CONTEXT.md`, `KONFHUB_ACCOMPLISHMENTS.md`; code evidence in `akhilk999/konfhub-internship`
 > **Scope:** Backend POC — not production KonfHub platform architecture.
 
 # Overview

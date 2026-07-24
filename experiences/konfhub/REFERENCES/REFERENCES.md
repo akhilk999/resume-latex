@@ -2,7 +2,7 @@
 
 ## Repositories
 
-- `akhilk999/konfhub-internship` (private internship POC; sole committer Akhil Kasamsetty) — primary evidence base summarized in `resume/extraction_docs/konfhub.md`
+- `akhilk999/konfhub-internship` (private internship POC; sole committer Akhil Kasamsetty) — primary code/artifact evidence; ownership summarized in `KONFHUB_CONTEXT.md`
 
 ## Pull Requests
 
@@ -19,14 +19,13 @@
 
 ## Documentation
 
-- `KONFHUB_CONTEXT.md`
+- `KONFHUB_CONTEXT.md` (canonical ownership / constraints)
 - `KONFHUB_ACCOMPLISHMENTS.md`
 - `KONFHUB_SYSTEM_DESIGN.md`
 - `METRICS.md`
 - `KONFHUB_INTERVIEW_GUIDE.md`
 - `KONFHUB_BULLETS.md`
-- `resume/extraction_docs/konfhub.md` (detailed repo extraction)
-- In-repo onboarding docs under `strands-agent-testing/` / `llm-testing/` (per extraction)
+- In-repo onboarding docs under `strands-agent-testing/` / `llm-testing/` (internship repo)
 
 ## Demos
 

@@ -1,52 +1,51 @@
 # Resume Workflow
 
-Operating manual for the resume optimization pipeline: extract context, structure accomplishments, generate bullets, and compose role-targeted variants from a single source of truth.
+Operating manual for the resume optimization pipeline: document experiences once, extract accomplishments, generate bullet candidates, then compose role-targeted LaTeX variants.
 
-This document describes the **intended** process. Implementation may currently live partly under `resume/` (e.g. `extraction_docs/`, `bullets/`, `variants/`); the long-term model is documented in [CAREER_KNOWLEDGE_BASE.md](./CAREER_KNOWLEDGE_BASE.md).
+**Canonical experience records:** `experiences/<name>/`  
+**Prompt step order (source of truth for how to run agents):** [prompts/README.md](../prompts/README.md)  
+**System architecture:** [CAREER_KNOWLEDGE_BASE.md](./CAREER_KNOWLEDGE_BASE.md)  
+**Compile PDFs:** [resume/README.md](../resume/README.md)
+
+This document explains the human pipeline and variant philosophy. It does not replace the prompts runbook.
+
+---
+
+## Source-of-truth layers
+
+| Layer | Location | Role |
+|-------|----------|------|
+| Facts / ownership / metrics | `experiences/<name>/` | Career truth |
+| Prompt procedure | `prompts/README.md` | How to extract and generate |
+| Bullet candidates | `experiences/<name>/*_BULLETS.md` | Staging before LaTeX |
+| PDF bullets | `resume/bullets/*.tex` | Derived surface (can drift — promote from bank) |
+| Variants | `resume/variants/` | Selection + emphasis only |
+
+Never invent metrics. Prefer fewer strong, verifiable claims.
 
 ---
 
 ## Extraction Phase
 
-Before writing resume bullets, complete extraction for the experience. Prompt order and rules: [prompts/README.md](../prompts/README.md).
+Before writing resume bullets, complete extraction for the experience. **Authoritative order and rules:** [prompts/README.md](../prompts/README.md).
 
-### 1. Create / fill `*_CONTEXT.md`
+Summary:
 
-Write Overview (what / why / who), Personal Ownership, Constraints, and Important Instructions. This file is the ownership source of truth for every later prompt. Do not skip it.
+1. **Create the experience folder** and stub files under `experiences/<name>/`.
+2. **Fill `*_CONTEXT.md`** (manual, interview, and/or document analysis) — ownership source of truth.
+3. **Analyze evidence** that applies: repository and/or engineering documents (no repo does not block the pipeline).
+4. **Extract accomplishments** → `*_ACCOMPLISHMENTS.md`.
+5. **Supporting docs:** system design, metrics, interview guide.
+6. **Generate bullet bank** → `*_BULLETS.md` (do not edit LaTeX yet).
+7. **Promote** selected bullets into `resume/bullets/` and enable them in a variant.
 
-### 2. Analyze project context (`prompts/extract/analyze_project_context.md`)
-
-Confirm product workflows, technical overview, and separate confirmed vs unknown vs assumptions needing verification.
-
-### 3. Analyze repositories (`prompts/extract/analyze_repository.md`)
-
-Identify services, languages, frameworks, infra, and integration points. Prefer README, architecture docs, and module boundaries over guessing from file names alone.
-
-### 4. Review documentation
-
-Read design docs, tickets, RFCs, runbooks, and demos. Documentation often contains metrics and decision rationale that never appear in casual recall.
-
-### 5. Review Git history only when ownership is reliable
-
-Use commits and PRs to confirm scope and timeline **when authorship maps clearly to your work**. Do not claim volume of commits as impact. Never assume Git history represents ownership if `*_CONTEXT.md` says otherwise.
-
-### 6. Extract accomplishments (`prompts/extract/extract_accomplishments.md`)
-
-Turn raw context into discrete records: What I Built, Technical Implementation, Engineering Challenge, Impact, Evidence, Tags. Prefer a complete accomplishment database over resume-ready prose.
-
-### 7. Identify metrics (`prompts/document/create_metrics.md`)
-
-Find numbers with provenance. Record Technical Metrics, Business Metrics, Awards / Recognition, and Metrics To Avoid in `METRICS.md`. Never invent numbers.
-
-### 8. Tag accomplishments
-
-Tag for targeting (Backend, Frontend, AI, Cloud, Database, Security, DevOps, Robotics, Product, Leadership). Tags drive variant selection and job matching later.
+Git history is supporting evidence only. Never assume commits represent ownership if CONTEXT says otherwise.
 
 ---
 
 ## Accomplishment Database
 
-The accomplishment database is the structured store of what happened—typically under `experiences/<name>/` and/or staging docs—before bullets are polished for LaTeX.
+Structured store under `experiences/<name>/*_ACCOMPLISHMENTS.md` before bullets are polished for LaTeX.
 
 Collect for each accomplishment:
 
@@ -78,7 +77,7 @@ Do not generate resume bullets before accomplishments exist.
 
 ## Bullet Generation
 
-Use `prompts/resume/generate_bullet_bank.md`. Group candidates under Backend SWE, Full Stack SWE, AI/ML, Robotics, and Product.
+Use `prompts/resume/generate_bullet_bank.md`. Group candidates under Backend SWE, Full Stack SWE, AI/ML, Robotics, and Product (match target roles; leave sections N/A when unsupported).
 
 ### Formula
 
@@ -103,6 +102,14 @@ When a precise metric is unavailable, keep X and Z concrete; do not invent Y.
 
 Style details (length, verbs, bolding, ATS) live in [RESUME_STYLE_GUIDE.md](./RESUME_STYLE_GUIDE.md).
 
+### Promoting to LaTeX
+
+1. Copy/adapt candidates from `experiences/<name>/*_BULLETS.md` into `resume/bullets/<name>.tex`.
+2. Wire flags in `resume/bullets/flags.tex` and section headers as needed.
+3. Enable the experience in the target `resume/variants/*.tex`.
+
+Do not treat `resume/bullets/*.tex` as the place to invent new facts — update CONTEXT/accomplishments/metrics first when claims change.
+
 ---
 
 ## Resume Variants
@@ -111,30 +118,30 @@ All variants draw from the **same** accomplishment database and bullet library. 
 
 ### Master Resume
 
-Broadest truthful inventory of strong experiences and bullets. Reference for what exists; not always the best application-specific PDF. Use to audit coverage and to copy selections into targeted variants.
+Broadest truthful inventory of strong experiences and bullets. Reference for what exists; not always the best application-specific PDF.
 
 ### Backend / Full Stack SWE Resume
 
-Emphasizes APIs, services, data stores, reliability, performance, and end-to-end feature delivery. Prefer bullets with system ownership, production impact, and backend/fullstack complexity. De-emphasize pure product or robotics-only work unless it strengthens the backend story.
+Emphasizes APIs, services, data stores, reliability, performance, and end-to-end feature delivery.
 
 ### AI / ML Resume
 
-Emphasizes models, data pipelines, evaluation, inference, RAG/agents, or ML-adjacent product systems. Prefer bullets with measurable model or pipeline outcomes and clear technical depth. Include supporting backend work when it shows productionization of ML.
+Emphasizes models, data pipelines, evaluation, inference, RAG/agents, or ML-adjacent product systems.
 
 ### Robotics Resume
 
-Emphasizes perception, control, hardware/software integration, real-time constraints, and robotics stack experience. Prefer domain-specific accomplishments; keep general SWE bullets only when they show transferable systems skill.
+Emphasizes perception, control, hardware/software integration, real-time constraints, and robotics stack experience.
 
 ### Product / Solutions Resume
 
-Emphasizes customer outcomes, problem framing, cross-functional delivery, demos, and translating technical capability into value. Prefer impact and stakeholder language; keep enough technical credibility for Solutions Engineer or technical PM-adjacent roles.
+Emphasizes customer outcomes, problem framing, cross-functional delivery, demos, and translating technical capability into value.
 
 ### How selection works
 
 ```
-Accomplishment database
+experiences/* (accomplishments + metrics + bullet bank)
         ↓
-Tagged / ranked bullets
+resume/bullets/*.tex (promoted candidates)
         ↓
 Variant includes a subset (+ skills emphasis)
         ↓
@@ -143,16 +150,16 @@ Compiled PDF
 
 Do not rewrite accomplishment history per variant. Change **which** bullets appear, **order**, and **skills section** emphasis—not the underlying facts.
 
-For JD-driven selection, see [JOB_DESCRIPTION_ANALYSIS.md](./JOB_DESCRIPTION_ANALYSIS.md).
+For JD-driven selection, see [JOB_DESCRIPTION_ANALYSIS.md](./JOB_DESCRIPTION_ANALYSIS.md) and [`job_descriptions/`](../job_descriptions/).
 
 ---
 
 ## Pipeline summary
 
 ```
-Experience folder + *_CONTEXT.md
+Context collection (manual | interview | documents)
         ↓
-analyze_project_context → analyze_repository
+Evidence analysis (repository and/or documents)
         ↓
 extract_accomplishments → *_ACCOMPLISHMENTS.md
         ↓
@@ -160,7 +167,7 @@ system design + metrics + interview guide
         ↓
 generate_bullet_bank → *_BULLETS.md
         ↓
-Variant selection (+ JD prompts as needed)
+Promote to resume/bullets + variant selection (+ JD as needed)
         ↓
 LaTeX compile → PDF
 ```

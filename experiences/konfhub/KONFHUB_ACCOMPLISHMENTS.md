@@ -1,6 +1,6 @@
 # KonfHub — Accomplishments
 
-Source: `KONFHUB_CONTEXT.md`, `resume/extraction_docs/konfhub.md` (repository analysis of `akhilk999/konfhub-internship`).
+Source: `KONFHUB_CONTEXT.md` (ownership / claim boundaries); internship repo `akhilk999/konfhub-internship` for code/artifact evidence.
 Do not invent metrics. Do not write polished resume bullets here.
 
 ---
@@ -30,7 +30,7 @@ Replaced a multi-step manual workflow (write copy → keyword research → brief
 
 ### Evidence
 
-`llm-testing/main.py`, `description_gen` / `poster-gen` evolution, `i-o/` outputs, `resume/extraction_docs/konfhub.md` §§1–3
+`llm-testing/main.py`, `description_gen` / `poster-gen` evolution, `i-o/` outputs; `KONFHUB_CONTEXT.md`
 
 ### Tags
 
