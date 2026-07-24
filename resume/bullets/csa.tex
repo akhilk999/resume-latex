@@ -2,29 +2,29 @@
 % CSA — bullets (project + leadership)
 % Default (projects): project bullets
 % Leadership: set \CSALeadershipBulletstrue before \input{bullets/csa}
-% Per-bullet toggles: \csaProjAfalse / \csaLeadAfalse
+% Sources: experiences/csa/CSA_BULLETS.md, METRICS.md
 %------------------------------------------------------------------------------
 
 \ifCSALeadershipBullets
-  % --- CSA Secretary (Leadership) ---
+  % --- CSA Secretary / PR (Leadership) ---
   \ifcsaLeadA
-    \resumeItem{Built a full-stack \textbf{Supabase} and \textbf{PostgreSQL} system, automating tracking for 400+ events per semester.}
+    \resumeItem{Replaced CSA's Google Sheets/Forms points workflow with a \textbf{Next.js} and \textbf{Supabase} platform (\textbf{Postgres}, Auth, RLS) automating tracking for \textbf{400+} events per semester.}
   \fi
   \ifcsaLeadB
-    \resumeItem{Created \href{https://csatamu.org/}{\underline{CSA website}} with \textbf{Next.js}, \textbf{Typescript}, and \textbf{Tailwind CSS}, improving recruitment by 20\%.}
+    \resumeItem{Created \href{https://csatamu.org/}{\underline{CSA website}} with \textbf{Next.js}, \textbf{TypeScript}, and \textbf{Tailwind CSS}, improving recruitment by \textbf{20\%} versus Instagram-only outreach.}
   \fi
   \ifcsaLeadC
-    \resumeItem{Developed a \textbf{Discord bot} using \textbf{Node.js} and \textbf{Discord.js} to automate operations for 300+ members.}
+    \resumeItem{Co-designed CSA's Discord verification bot and managed \textbf{GCP} hosting so automated onboarding runs for \textbf{300+} members across three Discord servers.}
   \fi
 \else
-  % --- CSA Website (Projects) ---
+  % --- CSA Points Platform (Projects) ---
   \ifcsaProjA
-    \resumeItem{Built a production full-stack web platform using \textbf{Next.js}, \textbf{Supabase}, and \textbf{PostgreSQL} with \textbf{Google OAuth}, \textbf{RBAC}, and 20+ PostgreSQL functions to manage organization operations.}
+    \resumeItem{Built a production full-stack points platform using \textbf{Next.js}, \textbf{Supabase}, and \textbf{PostgreSQL} with TAMU \textbf{Google OAuth}, role-based access, and \textbf{20+} PostgreSQL functions/RPCs for organization operations.}
   \fi
   \ifcsaProjB
-    \resumeItem{Replaced spreadsheet-based attendance and points tracking by developing \textbf{QR check-in}, officer dashboards, automated point calculations, and \textbf{Google Calendar} synchronization for \textbf{250+} organization members.}
+    \resumeItem{Replaced spreadsheet-based attendance tracking by developing \textbf{QR/self check-in}, officer dashboards, automated point calculations via triggers/RPCs, and \textbf{Google Calendar} sync for \textbf{250+} members.}
   \fi
   \ifcsaProjC
-    \resumeItem{Automated semester operations through scheduled event publishing, \textbf{PostgreSQL triggers}, and \textbf{Google APIs} supporting attendance, leaderboards, and administrative workflows.}
+    \resumeItem{Automated semester operations through \textbf{GitHub Actions} scheduled event publishing, \textbf{PostgreSQL} triggers, and transfer docs so officers can run the system without tribal Sheets knowledge.}
   \fi
 \fi

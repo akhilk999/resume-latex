@@ -1,0 +1,33 @@
+%==============================================================================
+% VARIANT: Product Management / Solutions
+% Open/build THIS file from resume/:  make product
+%==============================================================================
+
+\documentclass{resume}
+\input{bullets/flags}
+
+\renewcommand{\RelevantCoursework}{Software Engineering, Data Structures and Analysis of Algorithms, Programming Languages, Discrete Mathematics, Computer Systems, Linear Algebra, Computer Organization, Introduction to C++}
+
+\renewcommand{\SkillsLanguages}{Python, TypeScript, JavaScript, SQL, C++, HTML/CSS}
+\renewcommand{\SkillsFrameworks}{React, Next.js, FastAPI, Flask, Tailwind CSS}
+\renewcommand{\SkillsCloud}{PostgreSQL, Supabase, Azure App Service, Azure DevOps, AWS (Amazon Bedrock), Firebase}
+\renewcommand{\SkillsTools}{Git, GitHub, Postman, Vercel, VS Code, Node.js}
+\newcommand{\SkillsContent}{\input{sections/skills}}
+
+\newcommand{\ExperienceEntries}{%
+  \input{sections/experience/broadaxis}%
+  \input{sections/experience/ta}%
+  \input{sections/experience/konfhub}%
+  \input{sections/experience/robotics}%
+}
+
+% \ShowLeadershiptrue
+\newcommand{\LeadershipEntries}{%
+  % \input{sections/leadership/csa}%
+}
+
+\newcommand{\ProjectEntries}{%
+  \input{sections/projects/csa}%
+}
+
+\input{main}

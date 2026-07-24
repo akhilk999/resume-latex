@@ -1,0 +1,28 @@
+%==============================================================================
+% VARIANT: AI / ML
+% Open/build THIS file from resume/:  make ai
+%==============================================================================
+
+\documentclass{resume}
+\input{bullets/flags}
+
+\renewcommand{\RelevantCoursework}{Data Structures and Analysis of Algorithms, Linear Algebra, Software Engineering, Programming Languages, Computer Systems, Discrete Mathematics, Computer Organization, Introduction to C++}
+
+\renewcommand{\SkillsLanguages}{Python, C++, TypeScript, JavaScript, SQL, HTML/CSS}
+\renewcommand{\SkillsFrameworks}{NumPy, Pandas, Matplotlib, FastAPI, Flask, React, Next.js, Tailwind CSS}
+\renewcommand{\SkillsCloud}{AWS (Amazon Bedrock), PostgreSQL, Azure App Service, Azure DevOps, Supabase, Firebase}
+\renewcommand{\SkillsTools}{Git, GitHub, MCP, Postman, Node.js, Vercel, VS Code}
+\newcommand{\SkillsContent}{\input{sections/skills}}
+
+\newcommand{\ExperienceEntries}{%
+  \input{sections/experience/broadaxis}%
+  \input{sections/experience/konfhub}%
+  \input{sections/experience/ta}%
+  \input{sections/experience/robotics}%
+}
+\newcommand{\LeadershipEntries}{}
+\newcommand{\ProjectEntries}{%
+  \input{sections/projects/csa}%
+}
+
+\input{main}

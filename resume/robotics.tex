@@ -1,0 +1,28 @@
+%==============================================================================
+% VARIANT: Robotics
+% Open/build THIS file from resume/:  make robotics
+%==============================================================================
+
+\documentclass{resume}
+\input{bullets/flags}
+
+\renewcommand{\RelevantCoursework}{Introduction to C++, Computer Systems, Computer Organization, Data Structures and Analysis of Algorithms, Software Engineering, Linear Algebra, Discrete Mathematics, Programming Languages}
+
+\renewcommand{\SkillsLanguages}{C++, Python, TypeScript, JavaScript, SQL, HTML/CSS}
+\renewcommand{\SkillsFrameworks}{NumPy, Pandas, Matplotlib, FastAPI, React, Next.js, Tailwind CSS}
+\renewcommand{\SkillsCloud}{PostgreSQL, Azure App Service, AWS (Amazon Bedrock), Supabase, Firebase}
+\renewcommand{\SkillsTools}{Git, GitHub, Postman, Node.js, VS Code, Vercel}
+\newcommand{\SkillsContent}{\input{sections/skills}}
+
+\newcommand{\ExperienceEntries}{%
+  \input{sections/experience/robotics}%
+  \input{sections/experience/broadaxis}%
+  \input{sections/experience/ta}%
+  \input{sections/experience/konfhub}%
+}
+\newcommand{\LeadershipEntries}{}
+\newcommand{\ProjectEntries}{%
+  \input{sections/projects/csa}%
+}
+
+\input{main}

@@ -123,7 +123,15 @@
 \ShowLeadershipfalse
 
 % Default Technical Skills categories — variants may \renewcommand{...}
+% Convention: list most important first; trim from the end under space pressure.
 \newcommand{\SkillsLanguages}{C++, Python, Go, Java, C\#, SQL, TypeScript, JavaScript, Dart, HTML/CSS, Haskell}
 \newcommand{\SkillsFrameworks}{React, Next.js, FastAPI, Flask, Flutter, Tailwind CSS, Bootstrap, NumPy, Pandas, Matplotlib}
 \newcommand{\SkillsCloud}{Azure App Service, Azure DevOps, Azure PostgreSQL, Azure Static Web Apps, AWS (Amazon Bedrock), Supabase, PostgreSQL, Firebase}
 \newcommand{\SkillsTools}{Git, GitHub, MCP, Postman, Node.js, Vercel}
+
+% Default Relevant Coursework — variants may \renewcommand{\RelevantCoursework}{...}
+% Same convention: most important first; trim from the end if the page is tight.
+\newcommand{\RelevantCoursework}{Data Structures and Analysis of Algorithms, Computer Organization, Software Engineering, Computer Systems, Programming Languages, Linear Algebra, Discrete Mathematics, Introduction to C++}
+
+% Education block (variants may replace entirely via \renewcommand{\EducationContent}{...})
+\newcommand{\EducationContent}{\input{sections/education}}

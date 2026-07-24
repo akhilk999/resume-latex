@@ -1,16 +1,14 @@
 %------------------------------------------------------------------------------
 % BroadAxis — bullets
 % Toggle in a variant: \baBulletBfalse
+% Sources: experiences/broadaxis/*_BULLETS.md, METRICS.md
 %------------------------------------------------------------------------------
 \ifbaBulletA
-  \resumeItem{Developed core features for \textbf{Cirklo}, a multi-tenant AI-powered growth platform using \textbf{React}, \textbf{FastAPI}, and \textbf{PostgreSQL}, designing \textbf{115+ REST APIs}, \textbf{30} database tables, and tenant-aware \textbf{RBAC} authentication.}
+  \resumeItem{Built \textbf{Cirklo}, a production event-intelligence and CRM platform for BroadAxis, using \textbf{Python/FastAPI}, \textbf{React}, and \textbf{PostgreSQL} with \textbf{$\sim$100+} REST APIs and a \textbf{25}-table schema across 6 industry verticals.}
 \fi
 \ifbaBulletB
-  \resumeItem{Automated CRM workflows and event intelligence by building \textbf{AI-powered} pipelines for event discovery, enrichment, contact management, follow-up generation, and relationship tracking using \textbf{SearXNG}, \textbf{Playwright}, and \textbf{LLMs}.}
+  \resumeItem{Automated event discovery and enrichment by building scheduled pipelines (search $\rightarrow$ scrape $\rightarrow$ LLM extract $\rightarrow$ dedup/score) with retries, rate limiting, and graceful degradation under App Service timeout constraints.}
 \fi
 \ifbaBulletC
-  \resumeItem{Reduced deployment time by \textbf{80\%} by creating \textbf{Azure DevOps CI/CD} pipelines for automated testing, deployment, scheduled event scraping, and data enrichment across \textbf{Azure App Service} and \textbf{PostgreSQL}.}
+  \resumeItem{Shipped \textbf{Azure DevOps CI/CD} (4 pipelines, 10+ steps) deploying frontend (\textbf{Static Web Apps}) and backend (\textbf{App Service}) with health-check gating on every push to main, plus scheduled discovery and enrichment jobs.}
 \fi
-% Alternate / prior wording (not used by default):
-% \resumeItem{Developed \href{https://cirklo.ai/}{\underline{Cirklo}}, a multi-tenant SaaS platform for improving business operations, using \textbf{React} built with \textbf{Vite}, \textbf{Python FastAPI}, and \textbf{PostgreSQL}.}
-% \resumeItem{Created CI/CD pipelines with \textbf{Azure DevOps} for automated testing, deployment, and event scraping, reducing manual deployment time by 80\%.}

@@ -1,0 +1,25 @@
+%==============================================================================
+% VARIANT: Master — fullest inventory
+% Open/build THIS file from resume/:  make master
+%==============================================================================
+
+\documentclass{resume}
+\input{bullets/flags}
+
+% Coursework + Skills use class defaults unless overridden (trim from end if tight)
+\newcommand{\SkillsContent}{\input{sections/skills}}
+
+\newcommand{\ExperienceEntries}{%
+  \input{sections/experience/broadaxis}%
+  \input{sections/experience/ta}%
+  \input{sections/experience/konfhub}%
+  \input{sections/experience/robotics}%
+}
+\newcommand{\LeadershipEntries}{}
+\newcommand{\ProjectEntries}{%
+  \input{sections/projects/csa}%
+  \input{sections/projects/securesimple}%
+  \input{sections/projects/foodono}%
+}
+
+\input{main}

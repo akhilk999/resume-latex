@@ -13,35 +13,35 @@ Career facts, ownership, and bullet *candidates* live in `experiences/` and are 
 resume/
 ├── main.tex                 # Shared document body (do not compile directly)
 ├── resume.cls               # Jake's Resume styling (fonts, margins, helpers)
+├── backend.tex              # Compilable variants (open these — next to resume.cls)
+├── master.tex
+├── ai.tex
+├── robotics.tex
+├── product.tex
 ├── sections/
 │   ├── header.tex           # Name + contact
-│   ├── education.tex
-│   ├── skills.tex           # Overridable skill category macros
+│   ├── education.tex        # Uses \RelevantCoursework from the variant
+│   ├── skills.tex           # Uses \Skills* macros from the variant
 │   ├── experience/          # One file per role (headers only)
 │   ├── projects/            # One file per project (headers only)
 │   └── leadership/          # Optional leadership roles
 ├── bullets/                 # Reusable bullet banks per role/project
-├── variants/                # One compilable entry point per resume target
-│   ├── master.tex
-│   ├── backend.tex
-│   ├── ai.tex
-│   ├── robotics.tex
-│   └── product.tex
+├── variants/                # Legacy folder — see variants/README.md
 ├── Makefile
 └── README.md
 ```
 
 ## Compile
 
-Always run commands from the `resume/` directory so `\input` paths resolve.
+Always run commands from the `resume/` directory so `\input` paths resolve. **Open `backend.tex` (etc.), not anything under `variants/`.**
 
 ```bash
 cd resume
 
 # Single variant
-latexmk -pdf -jobname=master variants/master.tex
+make backend
 # or
-pdflatex -jobname=master variants/master.tex
+latexmk -pdf -jobname=backend backend.tex
 
 # All variants
 make all
@@ -51,19 +51,27 @@ Outputs: `master.pdf`, `backend.pdf`, `ai.pdf`, `robotics.pdf`, `product.pdf`.
 
 ## How customization works
 
-Each file under `variants/` is the configuration surface for that resume:
+Each of `backend.tex` / `master.tex` / `ai.tex` / `robotics.tex` / `product.tex` is the configuration surface for that resume:
 
 1. **Bullet selection** — after `\input{bullets/flags}`, turn bullets off:
    ```latex
    \baBulletBfalse
    \khBulletAfalse
    ```
-2. **Skills** — override category macros before the body:
+2. **Coursework** — override the ordered list (most important first; trim from the end if tight):
    ```latex
-   \renewcommand{\SkillsLanguages}{Python, Go, SQL, TypeScript}
+   \renewcommand{\RelevantCoursework}{Data Structures and Analysis of Algorithms, Software Engineering, Computer Systems}
    ```
-3. **Experience / projects / order** — edit `\ExperienceEntries` and `\ProjectEntries`.
-4. **Leadership** — set `\ShowLeadershiptrue` and list entries in `\LeadershipEntries`.
+3. **Skills** — override category macros the same way (order = priority; trim from the end):
+   ```latex
+   \renewcommand{\SkillsLanguages}{Python, C++, TypeScript, SQL}
+   \renewcommand{\SkillsFrameworks}{FastAPI, React, Next.js}
+   ```
+   To drop an entire skills row, redefine `\SkillsContent` in the variant.
+4. **Experience / projects / order** — edit `\ExperienceEntries` and `\ProjectEntries`.
+5. **Leadership** — set `\ShowLeadershiptrue` and list entries in `\LeadershipEntries`.
+
+**Space rule:** within coursework and each skills line, put must-keep items first and cut from the end when the PDF spills past one page.
 
 ### Adding a new experience
 

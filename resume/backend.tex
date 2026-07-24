@@ -1,0 +1,44 @@
+%==============================================================================
+% VARIANT: Backend SWE — Google / general backend internship focus
+%
+% Open/build THIS file (it sits next to resume.cls). From resume/:
+%   make backend
+%   latexmk -pdf -jobname=backend backend.tex
+%==============================================================================
+
+\documentclass{resume}
+\input{bullets/flags}
+
+%------------------------------------------------------------------------------
+% Bullet selection — Google SWE Intern (BS) Summer 2027
+%------------------------------------------------------------------------------
+% Broadaxis: all three (APIs, pipelines, CI/CD)
+% \khBulletCfalse
+
+%------------------------------------------------------------------------------
+% Coursework + Skills — most important first; trim from the END if page overflows
+% Do NOT claim Go until CSCE 120 starts
+%------------------------------------------------------------------------------
+\renewcommand{\RelevantCoursework}{Data Structures and Analysis of Algorithms, Software Engineering, Computer Systems, Computer Organization, Programming Languages, Introduction to C++, Discrete Mathematics, Linear Algebra}
+
+\renewcommand{\SkillsLanguages}{Python, C++, TypeScript, JavaScript, SQL, HTML/CSS}
+\renewcommand{\SkillsFrameworks}{FastAPI, React, Next.js, Flask, Tailwind CSS, NumPy, Pandas}
+\renewcommand{\SkillsCloud}{PostgreSQL, Azure App Service, Azure DevOps, Azure PostgreSQL, Azure Static Web Apps, AWS (Amazon Bedrock), Supabase, GitHub Actions, GCP}
+\renewcommand{\SkillsTools}{Git, GitHub, Postman, Node.js, Vercel, VS Code}
+\newcommand{\SkillsContent}{\input{sections/skills}}
+
+%------------------------------------------------------------------------------
+% Experience — production backend first; C++ breadth; TA fluency; KonfHub AI optional
+%------------------------------------------------------------------------------
+\newcommand{\ExperienceEntries}{%
+  \input{sections/experience/broadaxis}%
+  \input{sections/experience/robotics}%
+  \input{sections/experience/konfhub}%
+  \input{sections/experience/ta}%
+}
+\newcommand{\LeadershipEntries}{}
+\newcommand{\ProjectEntries}{%
+  \input{sections/projects/csa}%
+}
+
+\input{main}

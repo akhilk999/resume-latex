@@ -1,0 +1,39 @@
+{
+  "latex-workshop.latex.outDir": "%DIR%",
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "latexmk",
+      "tools": ["latexmk"]
+    },
+    {
+      "name": "make this variant",
+      "tools": ["make_docfile"]
+    }
+  ],
+  "latex-workshop.latex.tools": [
+    {
+      "name": "latexmk",
+      "command": "latexmk",
+      "args": [
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-jobname=%DOCFILE%",
+        "%DOC%"
+      ],
+      "options": {
+        "cwd": "%DIR%"
+      }
+    },
+    {
+      "name": "make_docfile",
+      "command": "make",
+      "args": ["%DOCFILE%"],
+      "options": {
+        "cwd": "%DIR%"
+      }
+    }
+  ],
+  "latex-workshop.chktex.enabled": false,
+  "latex-workshop.latex.rootFile.doNotPrompt": true
+}

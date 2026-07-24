@@ -1,5 +1,8 @@
 # Modular resume build
 # Run from this directory: make all
+#
+# Entry points live NEXT TO resume.cls (backend.tex, master.tex, …).
+# Do not compile files under variants/ — those are legacy shims.
 
 VARIANTS := master backend ai robotics product
 LATEXMK  := latexmk -pdf -interaction=nonstopmode -halt-on-error
@@ -9,7 +12,7 @@ LATEXMK  := latexmk -pdf -interaction=nonstopmode -halt-on-error
 all: $(VARIANTS)
 
 $(VARIANTS):
-	$(LATEXMK) -jobname=$@ variants/$@.tex
+	$(LATEXMK) -jobname=$@ $@.tex
 
 clean:
 	latexmk -C

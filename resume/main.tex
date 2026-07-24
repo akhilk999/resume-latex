@@ -2,13 +2,19 @@
 % main.tex — shared document body for all resume variants
 %
 % Do not compile this file directly. Compile a variant instead, e.g.:
-%   pdflatex -jobname=master variants/master.tex
+%   pdflatex -jobname=backend backend.tex
+%   make backend
 %
+% Open backend.tex / master.tex / ai.tex / robotics.tex / product.tex
+% (files that sit next to resume.cls). Do not use the legacy variants/ folder.
 % Expected macros (defined by each variant before \input{main}):
 %   \ExperienceEntries  — ordered \input{sections/experience/...} list
 %   \ProjectEntries     — ordered \input{sections/projects/...} list
-%   \SkillsContent      — usually \input{sections/skills}
-% Optional:
+%   \SkillsContent      — usually \input{sections/skills} (or custom)
+% Optional (defaults in resume.cls):
+%   \EducationContent   — usually \input{sections/education}
+%   \RelevantCoursework — ordered coursework string (trim from end if tight)
+%   \SkillsLanguages / \SkillsFrameworks / \SkillsCloud / \SkillsTools
 %   \LeadershipEntries  — ordered leadership inputs (requires \ShowLeadershiptrue)
 %------------------------------------------------------------------------------
 
@@ -18,8 +24,9 @@
 \input{sections/header}
 
 %-----------EDUCATION-----------
+% Coursework string controlled by \RelevantCoursework; full block via \EducationContent.
 \section{Education}
-\input{sections/education}
+\EducationContent
 
 %-----------EXPERIENCE-----------
 % Order and inclusion controlled by \ExperienceEntries in the variant file.
