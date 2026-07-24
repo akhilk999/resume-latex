@@ -39,7 +39,7 @@ Assist the workflow in [JOB_DESCRIPTION_ANALYSIS.md](./JOB_DESCRIPTION_ANALYSIS.
 |---------|----------|
 | **Analyze Job Description** | Extract keywords, technologies, responsibilities, impact themes; emit a structured note |
 | **Find Missing Keywords** | Diff JD keywords against skills section + enabled bullets for a chosen variant |
-| **Recommend Resume Variant** | Score category fit; suggest backend / AI / robotics / product (or blend) |
+| **Recommend Resume Variant** | Score category fit; suggest backend / AI / robotics / product / quant / forward_deployed / infra (or blend) |
 | **Suggest Relevant Bullets** | Rank accomplishment/bullet IDs by match strength for enabling in the variant |
 
 Inputs: JD text or file under `job_descriptions/`. Outputs: markdown or JSON consumed by humans (and later by generators).

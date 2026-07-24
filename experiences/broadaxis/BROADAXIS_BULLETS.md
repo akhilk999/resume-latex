@@ -48,3 +48,26 @@ _(Not applicable — no robotics work in this experience.)_
 - Designed systematic event evaluation replacing gut-feel decisions with data-driven scoring, enabling ROI-based event investment decisions
 - Built a platform that can serve multiple client organizations with guaranteed data isolation via database-level tenant separation *(capability; likely ownership on RLS)*
 - Leveraged AI throughout: event evaluation, contact summarization, follow-up drafting — making AI a product feature, not a demo
+
+# Quant / Trading SWE
+
+_(No trading/market domain — systems/data emphasis only.)_
+
+- Built automated discovery and enrichment pipelines (search → scrape → LLM extract → dedup → insert; 4-hourly rescoring with retries/rate limits) that continuously process event data under App Service timeout budgets
+- Designed a 5-dimension quantitative scoring rubric with structured JSON validation so event investment decisions use consistent numeric criteria instead of ad-hoc judgment
+- Implemented contact relationship scoring from interaction recency/frequency with automated decay rules to keep CRM rankings current
+- Owned production Python/FastAPI services and PostgreSQL schemas optimized for tenant-scoped analytical queries (~100+ REST endpoints, 25 tables)
+
+# Forward Deployed
+
+- Translated BroadAxis’s manual event-research and CRM workflows into a shipped platform operators use across 6 verticals (discovery → score → attend → pipeline)
+- Connected attendance outcomes to deal/follow-up tooling so business users could act on events without spreadsheet handoffs
+- Built operator-facing CRM/Events UIs (lifecycle funnel, scoring visualization, attendee import, Kanban deals) so non-engineers could run day-to-day workflows
+- Designed systematic evaluation replacing gut-feel decisions with explainable multi-dimension scores stakeholders could discuss
+
+# Infra / Platform
+
+- Built Azure DevOps CI/CD (4 pipeline definitions, 10+ steps) deploying frontend (Static Web Apps) and backend (App Service via Kudu zip-deploy) with health-check gating on every push to main
+- Scheduled nightly discovery and 4-hourly enrichment as hands-off automation within App Service B1 timeout and DeepSeek rate-limit constraints
+- Dual-environment discipline: SQLite local / PostgreSQL production behind one FastAPI codebase, with secret stripping and RLS enable steps in deploy *(db abstraction: likely ownership)*
+- Operated under constrained hosting (no K8s/Docker-primary path in prod zip-deploy) — do not claim Kubernetes or multi-region HA

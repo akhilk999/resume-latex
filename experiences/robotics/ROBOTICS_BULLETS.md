@@ -39,6 +39,26 @@ _(Not applicable to shipped WHOOP work. Vision/OpenCV-on-Pi is aspirational only
 - Mentored software members through pre–States/Worlds field setup and design reviews to grow path-authoring capacity beyond personal ownership
 - Supported Aggieland Classic (VEX V5 @ A&M) via field setup, Tournament Manager, score/match displays, and judging both hosted years
 
+# Quant / Trading SWE
+
+_(No trading domain — C++ / real-time systems / performance under constraint.)_
+
+- Programmed VEXU autonomous routines in PROS C++ on ReveilLib’s Reckless waypoint controller, chaining pose segments with async subsystem actions under match time pressure
+- Reduced positioning errors by 80% by debugging motion, optical, IMU, and encoder integration (including mechanical odom-pod root causes and distance-sensor wall snaps)
+- Extended ReveilLib motor abstractions with temperature APIs so firmware can read PROS motor heat for cooldown decisions on competition robots
+- Delivered 10+ autonomous routines contributing to +35% autonomous scoring and #10→#2 seeding at VEXU Worlds (team context; dual-credit awards)
+
+# Forward Deployed
+
+- Mentored software members through pre–States/Worlds field setup and design reviews so path-authoring capacity scaled beyond personal commits
+- Supported Aggieland Classic tournament ops (field setup, Tournament Manager, score/match displays, judging) for hosted VEX V5 events
+- As Webmaster, shipped Notion/Drive operating systems adopted by 50+ members so subteams could run without tribal knowledge
+- Rewrote Worlds auton paths on-site under a ~3-day window — high-ambiguity delivery against a hard competition deadline
+
+# Infra / Platform
+
+_(Not applicable as cloud/platform engineering. Org tooling is Product/FDSE; firmware is Robotics/Quant-systems.)_
+
 # Awards (team — dual-credit)
 
 - Team: Excellence Award and Robot Skills Champion @ Texas VEXU 2025; #2 seed @ 2025 VEXU Worlds; Design Award and #4 seed @ 2026 VEXU Worlds

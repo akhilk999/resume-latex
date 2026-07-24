@@ -208,7 +208,7 @@ Do not directly edit resume files yet.
 
 Resume bullets should always originate from the bullet bank.
 
-Bullet bank sections (`Backend SWE`, `Full Stack SWE`, `AI/ML`, `Robotics`, `Product`) match target roles. Leave sections empty or mark N/A when the experience does not support them — do not force-fit.
+Bullet bank sections match target roles / JD folders: `Backend SWE`, `Full Stack SWE`, `AI/ML`, `Robotics`, `Product`, `Quant / Trading SWE`, `Forward Deployed`, `Infra / Platform`. Leave sections empty or mark N/A when the experience does not support them — do not force-fit.
 
 ---
 

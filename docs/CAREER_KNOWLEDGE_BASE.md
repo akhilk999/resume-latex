@@ -93,7 +93,7 @@ LaTeX resume generation pipeline: shared body, bullet banks, section headers, an
 | Path | Purpose |
 |------|---------|
 | `main.tex` | Shared document body and section order hooks |
-| `variants/` | Compilable entry points; each selects bullets and emphasis for a target |
+| `backend.tex` / `master.tex` / … | Compilable entry points next to `resume.cls`; each selects bullets and emphasis for a target |
 | `bullets/` | Resume-ready bullet library distilled from experience docs |
 | `sections/` | Headers and structural sections (education, skills, experience shells) |
 
@@ -107,7 +107,7 @@ Cross-cutting interview preparation distilled from `experiences/*_INTERVIEW_GUID
 
 ### `job_descriptions/`
 
-Stored and annotated job descriptions (or representative samples) for keyword mining, variant recommendation, and gap analysis. See [JOB_DESCRIPTION_ANALYSIS.md](./JOB_DESCRIPTION_ANALYSIS.md) and [`job_descriptions/README.md`](../job_descriptions/README.md).
+Stored and annotated job descriptions (or representative samples) for keyword mining, variant recommendation, and gap analysis. Categories include backend, full_stack, ai, robotics, product, solutions, plus **quant**, **forward_deployed**, and **infra**. See [JOB_DESCRIPTION_ANALYSIS.md](./JOB_DESCRIPTION_ANALYSIS.md) and [`job_descriptions/README.md`](../job_descriptions/README.md).
 
 ### `prompts/`
 

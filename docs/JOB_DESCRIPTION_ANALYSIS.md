@@ -10,16 +10,21 @@ Representative job descriptions are acceptable. Internship and full-time posting
 
 Track requirements separately for each category you actively pursue:
 
-| Category | Typical focus |
-|----------|----------------|
-| Backend SWE | Services, APIs, data, reliability, scale |
-| Full Stack SWE | End-to-end features, UI + API, product delivery |
-| AI Engineer | Models, data, eval, inference, ML systems |
-| Robotics Engineer | Perception, control, embedded/real-time, HW/SW |
-| Product Management | Outcomes, prioritization, users, cross-functional |
-| Solutions Engineer | Customer problems, demos, technical storytelling |
+| Category | Folder | Typical focus |
+|----------|--------|----------------|
+| Backend SWE | `backend/` | Services, APIs, data, reliability, scale |
+| Full Stack SWE | `full_stack/` | End-to-end features, UI + API, product delivery |
+| AI Engineer | `ai/` | Models, data, eval, inference, ML systems |
+| Robotics Engineer | `robotics/` | Perception, control, embedded/real-time, HW/SW |
+| Product Management | `product/` | Outcomes, prioritization, users, cross-functional |
+| Solutions Engineer | `solutions/` | Customer problems, demos, technical storytelling |
+| Quant / Trading SWE | `quant/` | Low-latency/trading systems, market data, quant infra, Python/C++ on Linux |
+| Forward Deployed | `forward_deployed/` | Embed with customers, ambiguity, outcome ownership, travel |
+| Infra / Platform | `infra/` | IaC, K8s, cloud platforms, production infrastructure, reliability |
 
-A single posting may blend categories (e.g. Full Stack + AI). Record the primary category and any secondary tags.
+A single posting may blend categories (e.g. Full Stack + AI, or Quant + Infra). Record the primary category and any secondary tags.
+
+**Resume variants:** Until dedicated variants exist, map Quant → `backend` (systems/Python), Forward Deployed → `full_stack`/`product` blend (stakeholder shipping), Infra → `backend` with reliability/CI emphasis.
 
 ---
 
@@ -101,6 +106,9 @@ Choose or adjust a variant:
 | ML / LLM / data / AI platform | AI / ML |
 | Robotics / embedded / autonomy | Robotics |
 | PM or Solutions / customer technical | Product / Solutions |
+| Quant / trading SWE or quant-dev | Backend (systems/Python; C++ from robotics only if honest) |
+| Forward deployed / applied eng | Full Stack + Product blend (stakeholder shipping) |
+| Infra / platform / cloud | Backend (reliability, CI/CD, ops emphasis) |
 
 Compile, then spot-check against [RESUME_STYLE_GUIDE.md](./RESUME_STYLE_GUIDE.md) and missing-keyword notes.
 
@@ -112,7 +120,7 @@ Use the canonical template:
 
 [`job_descriptions/_templates/JD_ANALYSIS_TEMPLATE.md`](../job_descriptions/_templates/JD_ANALYSIS_TEMPLATE.md)
 
-Copy it into a category folder (`backend/`, `full_stack/`, `ai/`, `robotics/`, `product/`, `solutions/`). See [`job_descriptions/README.md`](../job_descriptions/README.md).
+Copy it into a category folder (`backend/`, `full_stack/`, `ai/`, `robotics/`, `product/`, `solutions/`, `quant/`, `forward_deployed/`, `infra/`). See [`job_descriptions/README.md`](../job_descriptions/README.md).
 
 ---
 

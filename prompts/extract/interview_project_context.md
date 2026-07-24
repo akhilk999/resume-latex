@@ -80,7 +80,10 @@ Adapt to the domain:
 **Software:** frontend, backend, DB, APIs, auth, infra, integrations  
 **Hardware / embedded:** sensors, actuators, power, MCU/FPGA, protocols  
 **Robotics:** drivetrain, auton, localization, sensors, control, mech integration  
-**Product / ops:** workflows, users, tools replaced, process changes
+**Product / ops:** workflows, users, tools replaced, process changes  
+**Quant / systems:** performance constraints, data pipelines, Linux tooling, analytical code (no fake trading claims)  
+**Forward deployed / stakeholder:** who used it, ambiguity, demos/explainers, operator-facing workflows  
+**Infra / platform:** CI/CD, cloud/deploy, monitoring, automation, reliability work
 
 ## 4. Implementation depth
 

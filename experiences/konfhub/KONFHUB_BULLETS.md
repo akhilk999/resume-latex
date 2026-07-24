@@ -46,3 +46,27 @@ _(Not applicable.)_
 - Ran comparative model and visual experiments (Bedrock/Gemini artifacts plus 20+ Canva MCP designs) to inform which generation approach fit event branding needs
 - Scoped Canva MCP down as the primary automated path after Connect API limits, while retaining Bedrock/Gemini generation for reliable POC demos
 - Packaged onboarding docs so the event-generation POC and tradeoffs between direct LLM calls and agentic workflows are reproducible
+
+# Quant / Trading SWE
+
+_(No trading/market domain — analytical pipelines / eval tooling only.)_
+
+- Built a Python generation pipeline with durable filesystem JSON contracts between stages so downstream poster steps reliably consume upstream description/keyword outputs
+- Evaluated 23 Bedrock foundation models on identical prompts and selected Nova Micro for the POC text stage on cost/latency tradeoffs
+- Created a reproducible 5-scenario agent test harness storing inputs, generated copy, and visual outputs for iterative debugging (124 PNG artifacts across pipeline + agents)
+- Improved observed content accuracy by ~65% and cut formatting errors from ~25% to ~3% by iterating parameterized prompts and multi-turn chaining
+
+# Forward Deployed
+
+- Translated organizer pain (manual copy + poster work after entering event 5W) into a backend POC meant to plug into KonfHub event creation
+- Encoded stakeholder constraints (SEO, short copy, 16:9 no-text/no-face posters, style variants) into enforceable prompts/agent instructions rather than loose demos
+- Scoped Canva MCP out as the primary automated path after API limits, keeping Bedrock/Gemini paths that still demo reliably for product conversations
+- Packaged onboarding docs so teammates can reproduce the POC and understand direct-LLM vs agentic tradeoffs
+
+# Infra / Platform
+
+_(POC / internship scope — not production platform engineering.)_
+
+- Integrated Bedrock and Gemini behind environment-configured secrets, with Bedrock Guardrails on the text path
+- Designed a provider-agnostic OOP generation layer so backends could be swapped without rewriting the pipeline
+- Delivered the POC through 8 merged PRs over ~6 weeks with consistent artifact layouts for handoff — do not claim CI/CD, Kubernetes, or production multi-tenant infra

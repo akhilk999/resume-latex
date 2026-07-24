@@ -1,0 +1,20 @@
+{
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "make backend (resume/)",
+      "tools": ["make_backend"]
+    }
+  ],
+  "latex-workshop.latex.tools": [
+    {
+      "name": "make_backend",
+      "command": "make",
+      "args": ["backend"],
+      "options": {
+        "cwd": "${workspaceFolder}/resume"
+      }
+    }
+  ],
+  "latex-workshop.latex.rootFile": "resume/backend.tex",
+  "latex-workshop.chktex.enabled": false
+}

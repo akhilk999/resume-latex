@@ -39,3 +39,26 @@ _(Not applicable.)_
 - As Secretary, redesigned membership points operations from spreadsheet/forms into an authenticated product tracking 400+ events per semester for 250+ members
 - Co-designed CSA’s Discord verification bot with a teammate and managed GCP hosting so automated onboarding runs for 300+ members across three Discord servers
 - Wrote onboarding and operations documentation so future officers can administer points without relying on tribal Sheets knowledge
+
+# Quant / Trading SWE
+
+_(No trading domain — data integrity / analytical ops emphasis only.)_
+
+- Encoded points policy in PostgreSQL triggers and RPCs that maintain cached semester totals and cap rules so leaderboard numbers stay correct under high event volume (400+ events/semester)
+- Replaced spreadsheet-driven attendance accounting with Postgres-backed check-in writes that drive automated leaderboard updates for 250+ members
+- Authored ~20 PostgreSQL functions/RPCs across 40+ migrations to keep operational data consistent as officers change process mid-semester
+
+# Forward Deployed
+
+- Embedded with CSA officers as Secretary/PR Chair to replace tribal Sheets/Forms workflows with a production points product officers actually operate
+- Shipped QR/officer check-in, roster import, and admin consoles so non-engineer operators could run attendance and semester lifecycle without developer intervention
+- Wrote architecture and day-to-day ops transfer docs so future officers can administer the system without relying on the original builder
+- Co-designed Discord verification UX with a teammate and owned GCP hosting so onboarding automation stays up for 300+ members across three servers
+- As PR Chair, shipped a public site aimed at recruitment visibility (~20% improvement vs Instagram-only) — stakeholder outcome over pure engineering novelty
+
+# Infra / Platform
+
+- Managed GCP hosting for CSA’s Discord verification bot (`nnbot`) so automated member onboarding stays online for 300+ members
+- Added GitHub Actions–triggered scheduled event publishing / cron keepalive for officer operations on the points platform
+- Deployed and handed off production sites (Vercel for csatamu.org; Supabase-backed points.csatamu.org) with env/domain transfer documentation for future officers
+- Maintained Postgres RLS, Auth, and migration discipline as the operational backbone — hosted-platform ops, not self-managed Kubernetes

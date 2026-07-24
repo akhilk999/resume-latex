@@ -19,7 +19,7 @@ This document explains the human pipeline and variant philosophy. It does not re
 | Prompt procedure | `prompts/README.md` | How to extract and generate |
 | Bullet candidates | `experiences/<name>/*_BULLETS.md` | Staging before LaTeX |
 | PDF bullets | `resume/bullets/*.tex` | Derived surface (can drift — promote from bank) |
-| Variants | `resume/variants/` | Selection + emphasis only |
+| Variants | `resume/backend.tex`, `master.tex`, `ai.tex`, … | Selection + emphasis only |
 
 Never invent metrics. Prefer fewer strong, verifiable claims.
 
@@ -77,7 +77,7 @@ Do not generate resume bullets before accomplishments exist.
 
 ## Bullet Generation
 
-Use `prompts/resume/generate_bullet_bank.md`. Group candidates under Backend SWE, Full Stack SWE, AI/ML, Robotics, and Product (match target roles; leave sections N/A when unsupported).
+Use `prompts/resume/generate_bullet_bank.md`. Group candidates under Backend SWE, Full Stack SWE, AI/ML, Robotics, Product, **Quant / Trading SWE**, **Forward Deployed**, and **Infra / Platform** (match target roles / `job_descriptions/` folders; leave sections N/A when unsupported).
 
 ### Formula
 
@@ -106,7 +106,7 @@ Style details (length, verbs, bolding, ATS) live in [RESUME_STYLE_GUIDE.md](./RE
 
 1. Copy/adapt candidates from `experiences/<name>/*_BULLETS.md` into `resume/bullets/<name>.tex`.
 2. Wire flags in `resume/bullets/flags.tex` and section headers as needed.
-3. Enable the experience in the target `resume/variants/*.tex`.
+3. Enable the experience in the target `resume/backend.tex` (or `ai.tex` / `robotics.tex` / …).
 
 Do not treat `resume/bullets/*.tex` as the place to invent new facts — update CONTEXT/accomplishments/metrics first when claims change.
 
@@ -136,6 +136,18 @@ Emphasizes perception, control, hardware/software integration, real-time constra
 
 Emphasizes customer outcomes, problem framing, cross-functional delivery, demos, and translating technical capability into value.
 
+### Quant / Trading SWE (usually via `backend` variant)
+
+Emphasizes production Python/C++ systems, data pipelines, performance/reliability under constraint, Linux fluency. Do not invent trading or market-domain claims; map from truthful systems/data work.
+
+### Forward Deployed (usually via `full_stack` / `product` blend)
+
+Emphasizes stakeholder shipping, operator-facing tools, ambiguity, and explaining technical tradeoffs to non-experts (CSA/Broadaxis-style stories).
+
+### Infra / Platform (usually via `backend` variant)
+
+Emphasizes CI/CD, cloud/ops reliability, automation, and observability. Only claim IaC/Kubernetes when evidenced in experience docs.
+
 ### How selection works
 
 ```
@@ -148,7 +160,12 @@ Variant includes a subset (+ skills emphasis)
 Compiled PDF
 ```
 
-Do not rewrite accomplishment history per variant. Change **which** bullets appear, **order**, and **skills section** emphasis—not the underlying facts.
+Do not rewrite accomplishment history per variant. Change **which** bullets appear, **order**, **skills**, and **relevant coursework** emphasis—not the underlying facts.
+
+In each variant file (`resume/backend.tex`, `ai.tex`, …), override with ordered lists (most important first; trim from the end if the PDF exceeds one page):
+
+- `\renewcommand{\RelevantCoursework}{...}`
+- `\renewcommand{\SkillsLanguages}{...}` (and Frameworks / Cloud / Tools)
 
 For JD-driven selection, see [JOB_DESCRIPTION_ANALYSIS.md](./JOB_DESCRIPTION_ANALYSIS.md) and [`job_descriptions/`](../job_descriptions/).
 

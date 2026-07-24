@@ -385,6 +385,12 @@ Leadership
 
 Product Design
 
+Customer / stakeholder delivery (Forward Deployed)
+
+Platform / infra / reliability
+
+Performance systems / data pipelines (Quant-adjacent)
+
 ----------------------------------------------------------
 
 # Missing Information

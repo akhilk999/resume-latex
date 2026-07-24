@@ -36,8 +36,25 @@ _(Not applicable — Jetson presence is lab hardware support only; do not place 
 - Coordinated with Peer Teachers to rebalance uneven workloads through direct conversations when teammates under-contributed
 - Adapted explanations to beginners vs experienced coders so concepts stuck across widely different prior knowledge (and avoided one-size-fits-all metaphors)
 
+# Quant / Trading SWE
+
+_(Not applicable — no systems/data/trading engineering ownership.)_
+
+# Forward Deployed
+
+- Mentored **100+** students across ENGR 102 and PHYS 216 by adapting explanations to beginners vs experienced students and teaching debug methods (print/dry-run) instead of only fixing code for them
+- Owned weekly office hours plus Discord/email support so students could unblock under ambiguous, incomplete problem statements
+- Graded **100+** submissions/week with rubrics created when missing — high-volume operator workflow under fixed deadlines
+- Supported PHYS 216 Jetson lab tables by troubleshooting Linux VM connectivity and helping students transfer `.csv`/`.mp4` outputs (lab support — not embedded design)
+- Coordinated with Peer Teachers to rebalance uneven workloads when teammates under-contributed
+
+# Infra / Platform
+
+_(Not applicable — no CI/CD, cloud platform, or production infra ownership. Jetson work is lab support only; keep under Forward Deployed / notes.)_
+
 # Notes for resume variants
 
 - Date line suggestion: `Undergraduate Peer Teacher, Texas A&M — ENGR 102 & PHYS 216 | Aug 2025 – May 2026` (add CSCE 120 after it starts)
 - Do **not** list Go beside Python until CSCE 120 experience is real (or footnote as incoming)
 - Update `resume/bullets/ta.tex` from this bank when ready — old 25+/Python+Go wording is stale relative to CONTEXT
+- For FDSE variants, prefer Product/Forward Deployed bullets; do not force Backend/Infra from TA
