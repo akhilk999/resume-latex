@@ -1,32 +1,37 @@
 # Broadaxis — Interview Guide
 
-> **Sources:** `BROADAXIS_CONTEXT.md`, `BROADAXIS_ACCOMPLISHMENTS.md`, `BROADAXIS_SYSTEM_DESIGN.md`, `METRICS.md`
+> **Sources:** `BROADAXIS_CONTEXT.md`, `BROADAXIS_ACCOMPLISHMENTS.md`, `BROADAXIS_SYSTEM_DESIGN.md`, `METRICS.md`, `REFERENCES/REFERENCES.md`
 > **Rule:** Do not invent experiences. Prefer confirmed ownership; label likely contributions when speaking.
+> **NDA:** Externally, emphasize technical design, constraints, and impact. Avoid confidential product contents / tenant identities. Safe manager-confirmed claims: actual tenants exist; multi-agent system shipped on Azure; stakeholder presentation.
 
 # Project Summary
 
-**Product:** Cirklo — B2B CRM + event-intelligence for BroadAxis (AI modernization consulting: government, oil & gas, staffing, private equity, Microsoft enterprise).
+**Product (external framing):** A production multi-tenant B2B event-intelligence + CRM platform on Azure (internally / privately: Cirklo). Prefer technical importance over proprietary workflow detail in interviews.
 
-**Problem:** Events lived in spreadsheets; contacts from events were lost; no systematic way to decide which events to attend or sponsor.
+**Problem (high-level):** Manual event research and CRM were siloed; no systematic way to evaluate events or turn attendance into pipeline.
 
-**Your role:** Primary engineer for **Event** and **CRM** platforms. Branding was built by a separate teammate.
+**Your role:** Primary engineer for **Event** and **CRM** platforms. Branding was built by a separate teammate. Reported directly to **Rohan Mandrekar**.
 
-**Stack:** React 19 SPA (Vite) → FastAPI monolith (~5,000 lines) → PostgreSQL (prod) / SQLite (dev). Azure: Static Web Apps, App Service B1, PostgreSQL Flexible Server, Blob Storage. CI/CD via Azure DevOps. AI via DeepSeek.
+**Stack:** React 19 SPA (Vite) → FastAPI monolith (~5,000 lines) → PostgreSQL (prod) / SQLite (dev). Azure: Static Web Apps, App Service B1, PostgreSQL Flexible Server, Blob Storage. CI/CD via Azure DevOps. AI via DeepSeek (multi-agent discovery/enrichment workflows).
 
 **Ownership for interviews**
 
 | Level | Scope |
 |-------|--------|
-| **Confirmed** | Event discovery / scoring / enrichment; CRM (contacts, companies, deals, interactions, follow-ups, meetings, tasks, activity feed, analytics); documents; attendee import; CI/CD + scheduled pipelines for this platform |
+| **Confirmed** | Event discovery / scoring / enrichment; CRM (contacts, companies, deals, interactions, follow-ups, meetings, tasks, activity feed, analytics); documents; attendee import; CI/CD + scheduled pipelines for this platform; stakeholder presentation; Azure deploy of shipped multi-agent system; production tenants exist (manager-confirmed — no count/names) |
 | **Likely** | Auth, RBAC, multi-tenant RLS, `dbconn` dual-database layer |
 | **Possible** | Rate-limit middleware design, CORS, settings/user-management endpoints, theme tokens |
-| **Do not claim** | Branding platform |
+| **Do not claim** | Branding platform; tenant count or tenant/customer names; confidential product contents beyond NDA-safe technical framing |
 
 ---
 
-### Elevator pitch (30–60s)
+### Elevator pitch (30–60s) — external / NDA-safe
 
-> I built Cirklo’s event intelligence and CRM for BroadAxis. The system discovers industry events across six verticals, scores them with a five-dimension DeepSeek rubric, and connects attendance to a full CRM pipeline — contacts, deals, follow-ups, and audit. It’s a FastAPI monolith on Azure with PostgreSQL RLS for multi-tenancy. Nightly discovery finds 5–20 new events; enrichment rescores every four hours within App Service B1 timeout limits.
+> I interned as a software engineer reporting to Rohan Mandrekar and shipped a production multi-tenant event-intelligence and CRM platform on Azure. I owned the event discovery and CRM backends and UIs: automated discovery and multi-agent enrichment/scoring pipelines, a full contacts/deals pipeline, and Azure DevOps CI/CD. The product runs with real client tenants isolated via PostgreSQL RLS. I ramped quickly on Azure and multi-agent systems, designed before coding, and presented the work to stakeholders myself.
+
+### Elevator pitch (internal prep only)
+
+> I built Cirklo’s event intelligence and CRM. The system discovers industry events across six verticals, scores them with a five-dimension DeepSeek rubric, and connects attendance to a full CRM pipeline — contacts, deals, follow-ups, and audit. It’s a FastAPI monolith on Azure with PostgreSQL RLS for multi-tenancy (actual tenants in production). Nightly discovery finds 5–20 new events; enrichment rescores every four hours within App Service B1 timeout limits.
 
 ---
 
@@ -38,13 +43,14 @@
 **Enrichment:** Every 4 hours; 4 events/batch; 2s LLM spacing; ~1–3.5 min.  
 **CRM:** 7 lifecycle stages; 6 deal stages; relationship score recency 60% / frequency 40%.  
 **Decay:** warm/known → cold after 180d no touch; active_client → known_contact after 90d.  
-**AI use cases:** scoring, contact summaries, follow-up draft, follow-up refine, aggregator mining.  
+**AI use cases:** scoring, contact summaries, follow-up draft, follow-up refine, aggregator mining (manager also framed the shipped Azure work as a complete multi-agent system).  
 **Activity feed:** 7 sources; 40+ endpoints logging; RBAC via contact owner OR actor.  
 **Auth (likely):** PIN + bcrypt (+ plaintext auto-upgrade); 24h Bearer DB sessions; 10 attempts / 60s / IP.  
 **RBAC (likely):** Admin / Partner / Member / Guest; 7 resources × view/edit/delete.  
-**Multi-tenant (likely):** 25 tables; FORCE RLS; `cirklo_app`; auth_bootstrap; acting_tenant_id.  
+**Multi-tenant (likely ownership of RLS):** 25 tables; FORCE RLS; `cirklo_app`; auth_bootstrap; acting_tenant_id; **actual tenants in production** (manager-confirmed).  
 **Code scale:** ~5k main.py; ~2k scripts; ~400 agent; ContactsPage ~1,986 / EventsPage ~1,775 lines.  
 **API surface:** ~100+ REST endpoints.
+**Soft / leadership (confirmed):** Stakeholder presentation of shipped work; methodical design-before-code; fast ramp on Azure + multi-agent systems.
 
 ---
 
@@ -154,7 +160,7 @@ Hands-off enrichment (~1–3.5 min typical) without a separate worker service on
 
 ### Situation
 
-Cirklo started single-tenant for BroadAxis; needed multi-org isolation without downtime or leaks.
+Cirklo started single-tenant for BroadAxis; needed multi-org isolation without downtime or leaks. The product now has **actual tenants** in production (manager-confirmed).
 
 ### Problem
 
@@ -174,7 +180,7 @@ Why RLS over app-only `WHERE`; table-owner/superuser RLS pitfalls; login-before-
 
 ### Result
 
-Defense-in-depth isolation; existing INSERTs auto-populate `tenant_id` via session DEFAULT.
+Defense-in-depth isolation; existing INSERTs auto-populate `tenant_id` via session DEFAULT; production multi-tenant with real client organizations (no inventable count).
 
 ## Challenge 5 — Activity Audit Feed (SWE / Backend)
 
@@ -459,13 +465,22 @@ Use these as “tell me about a hard bug / production constraint” answers. The
 - Time you designed for a hard infrastructure constraint (B1)
 - Time you prioritized defense-in-depth (RLS) over shipping speed
 - How do you rehearse risky migrations without staging slots?
+- Time you learned a new stack quickly (Azure / multi-agent) and shipped
+- Time you presented technical work to non-engineering stakeholders
+
+### Stakeholder presentation (manager-confirmed)
+
+**Situation:** End of internship; needed to socialize what shipped.  
+**Action:** Presented the work to stakeholders yourself (not only via manager).  
+**Result:** Manager recommendation: did a great job; supports “finishes what he starts / communicates clearly” narrative.  
+**External tip:** Describe audience + technical themes + decisions; do not dump confidential product contents.
 
 
 # Potential Interview Questions
 
 ### Software engineering / systems
 
-- Walk me through Cirklo end-to-end from discovery to closed deal.
+- Walk me through the platform end-to-end from discovery to closed deal (sanitize product contents per NDA).
 - Why a monolith? When would you split services?
 - How did you work around the B1 ~230s timeout?
 - Why subprocesses instead of a task queue? When Celery/Redis?
@@ -523,12 +538,15 @@ Use these as “tell me about a hard bug / production constraint” answers. The
 - **Branding** platform ownership
 - Solo ownership of **auth / RBAC / multi-tenancy / dbconn** unless you can defend it — say **likely / shared**
 - **Possible** items (CORS, settings/user mgmt, theme tokens, rate-limit middleware design) as primary work
-- Invented **business** metrics (revenue, dollar ROI) beyond documented technical metrics (5–20 events/night, tables, endpoints, code sizes, etc.)
+- Invented **business** metrics (revenue, dollar ROI, **tenant count**, tenant/customer **names**) beyond documented technical metrics (5–20 events/night, tables, endpoints, code sizes, etc.)
 - Microservices, Kubernetes, multi-region HA
 - Playwright works on **every** prod path without nuance
 - JWT auth (it’s DB-backed Bearer tokens)
 - Blue/green zero-downtime on B1 (no deployment slots; direct deploy + health gates)
-- Experiences or metrics not in the accomplishments / system design docs
+- Experiences or metrics not in the accomplishments / system design / manager-confirmation docs
+- Confidential **product contents** externally (NDA) — use technical + importance framing; product name omitted on resume
+
+**Safe to claim (manager-confirmed):** actual tenants exist; multi-agent system shipped and running on Azure; stakeholder presentation; fast ramp on Azure/multi-agent; methodical design-before-code.
 
 ---
 

@@ -122,12 +122,15 @@
 \newif\ifShowLeadership
 \ShowLeadershipfalse
 
+% Role titles variants may override (default = shared experience header)
+\newcommand{\BroadAxisRoleTitle}{Software Engineering Intern}
+
 % Default Technical Skills categories — variants may \renewcommand{...}
 % Convention: list most important first; trim from the end under space pressure.
-\newcommand{\SkillsLanguages}{C++, Python, Go, Java, C\#, SQL, TypeScript, JavaScript, Dart, HTML/CSS, Haskell}
-\newcommand{\SkillsFrameworks}{React, Next.js, FastAPI, Flask, Flutter, Tailwind CSS, Bootstrap, NumPy, Pandas, Matplotlib}
-\newcommand{\SkillsCloud}{Azure App Service, Azure DevOps, Azure PostgreSQL, Azure Static Web Apps, AWS (Amazon Bedrock), Supabase, PostgreSQL, Firebase}
-\newcommand{\SkillsTools}{Git, GitHub, MCP, Postman, Node.js, Vercel}
+\newcommand{\SkillsLanguages}{Python, C++, Go, TypeScript, JavaScript, SQL, HTML/CSS}
+\newcommand{\SkillsFrameworks}{React, Next.js, FastAPI, Flask, Tailwind CSS, NumPy, Pandas}
+\newcommand{\SkillsCloud}{PostgreSQL, Azure App Service, Azure DevOps, Azure PostgreSQL, Azure Static Web Apps, Azure Blob Storage, AWS (Amazon Bedrock), Supabase, Firebase, GitHub Actions, GCP}
+\newcommand{\SkillsTools}{Git, GitHub, Postman, Node.js, Vercel, VS Code}
 
 % Default Relevant Coursework — variants may \renewcommand{\RelevantCoursework}{...}
 % Same convention: most important first; trim from the end if the page is tight.

@@ -35,9 +35,11 @@ _(Not applicable to shipped WHOOP work. Vision/OpenCV-on-Pi is aspirational only
 
 # Product
 
-- As Webmaster and executive officer, rolled out Notion task databases/subteams/permissions adopted by 50+ members and standardized Google Drive folder and meeting-note templates for officers
+- As Webmaster and executive-board officer (one of ~7 exec / ~15 officers), rolled out Notion task databases/subteams/permissions adopted by 50+ members and standardized Google Drive folder and meeting-note templates for officers
+- Building the org Next.js/React website (public launch pending ~late Aug 2026) and an internal wiki/knowledge base (in progress) — do not claim either as live until confirmed
 - Mentored software members through pre–States/Worlds field setup and design reviews to grow path-authoring capacity beyond personal ownership
 - Supported Aggieland Classic (VEX V5 @ A&M) via field setup, Tournament Manager, score/match displays, and judging both hosted years
+- Partnered with the President on exec decisions and org-wide process continuity
 
 # Quant / Trading SWE
 
@@ -50,10 +52,11 @@ _(No trading domain — C++ / real-time systems / performance under constraint.)
 
 # Forward Deployed
 
+- As Webmaster, shipped Notion/Drive operating systems adopted by 50+ members so subteams could run without tribal knowledge; building public site + internal wiki (launch/wiki not claimable as live yet)
+- Rewrote Worlds auton paths on-site under a ~3-day window — high-ambiguity delivery against a hard competition deadline
 - Mentored software members through pre–States/Worlds field setup and design reviews so path-authoring capacity scaled beyond personal commits
 - Supported Aggieland Classic tournament ops (field setup, Tournament Manager, score/match displays, judging) for hosted VEX V5 events
-- As Webmaster, shipped Notion/Drive operating systems adopted by 50+ members so subteams could run without tribal knowledge
-- Rewrote Worlds auton paths on-site under a ~3-day window — high-ambiguity delivery against a hard competition deadline
+- Exec-board Webmaster role: conflict/org management input with President; continuity tooling for ~15 officers
 
 # Infra / Platform
 

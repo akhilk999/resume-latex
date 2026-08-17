@@ -7,9 +7,9 @@
 
 # Overview
 
-Cirklo is a B2B CRM + event-intelligence platform built for BroadAxis, a consulting firm focused on AI modernization for government, oil & gas, staffing, private equity, and Microsoft enterprise customers. The platform automates the end-to-end workflow from discovering industry events → evaluating them with AI scoring → tracking contacts met at events → managing the sales pipeline through to closed deals.
+Cirklo is a B2B CRM + event-intelligence platform originally built for BroadAxis, a consulting firm focused on AI modernization for government, oil & gas, staffing, private equity, and Microsoft enterprise customers. The platform automates the end-to-end workflow from discovering industry events → evaluating them with AI scoring → tracking contacts met at events → managing the sales pipeline through to closed deals.
 
-The system is a monolithic Python/FastAPI backend with a React SPA frontend, deployed on Azure with PostgreSQL, Blob Storage, and CI/CD via Azure DevOps. It supports multi-tenant isolation through PostgreSQL Row-Level Security.
+The system is a monolithic Python/FastAPI backend with a React SPA frontend, deployed on Azure with PostgreSQL, Blob Storage, and CI/CD via Azure DevOps. It supports multi-tenant isolation through PostgreSQL Row-Level Security. **Production tenancy:** manager-confirmed **actual tenants** use the product (no claimed count/names). Treat detailed product contents as NDA-sensitive for external discussion; this design doc is for personal engineering prep.
 
 Akhil was the primary engineer for the Event and CRM platforms. The Branding platform was built by a separate team member.
 
@@ -664,7 +664,7 @@ Push to main
 **Decision:** PostgreSQL RLS with FORCE + dedicated app role.
 **Why:** Defense in depth — one missed WHERE cannot leak tenants.
 **Tradeoff:** Harder debugging; DEFAULT means tenant_id rarely explicit in code.
-**Future:** Additional tenants beyond BroadAxis; monitoring for isolation.
+**Status:** Production multi-tenancy with **actual tenants** (manager-confirmed). Continue monitoring isolation and pool/RLS performance as tenant count grows; do not invent tenant numbers in claims.
 
 ### Bearer Sessions over JWT
 **Decision:** DB-stored 24h Bearer tokens.
@@ -709,7 +709,7 @@ Push to main
 
 ### Horizontal / product scale
 - **More verticals (e.g. 100):** Keep per-vertical (or sharded) sweep workers; move long jobs to a queue; measure discovery quality (precision/recall of scored Attend events)
-- **More tenants:** RLS already isolates; platform admin switcher exists; watch connection pool + RLS policy performance; per-tenant vertical config already supported
+- **Growing tenants:** Actual tenants already on the platform (manager-confirmed); RLS already isolates; platform admin switcher exists; watch connection pool + RLS policy performance; per-tenant vertical config already supported
 - **Activity feed growth (1M+ rows):** Indexes on timestamp + tenant; consider materialized activity table or streaming instead of giant UNION ALL; refactor if sources exceed ~5–7
 - **Enrichment load:** Extract to separate container/worker when batch size or frequency impacts API latency
 - **Scraping volume:** Cache page content; add fallback strategies; avoid re-scraping unchanged pages

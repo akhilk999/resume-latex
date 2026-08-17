@@ -24,7 +24,7 @@ Track requirements separately for each category you actively pursue:
 
 A single posting may blend categories (e.g. Full Stack + AI, or Quant + Infra). Record the primary category and any secondary tags.
 
-**Resume variants:** Until dedicated variants exist, map Quant → `backend` (systems/Python), Forward Deployed → `full_stack`/`product` blend (stakeholder shipping), Infra → `backend` with reliability/CI emphasis.
+**Resume variants:** Map Quant → `backend` (systems/Python), Forward Deployed → **`fdse`** (eng-forward stakeholder shipping; `product` for PM/solutions-shaped posts), Infra → `backend` with reliability/CI emphasis.
 
 ---
 
@@ -107,7 +107,7 @@ Choose or adjust a variant:
 | Robotics / embedded / autonomy | Robotics |
 | PM or Solutions / customer technical | Product / Solutions |
 | Quant / trading SWE or quant-dev | Backend (systems/Python; C++ from robotics only if honest) |
-| Forward deployed / applied eng | Full Stack + Product blend (stakeholder shipping) |
+| Forward deployed / applied eng | Forward Deployed (`fdse`) |
 | Infra / platform / cloud | Backend (reliability, CI/CD, ops emphasis) |
 
 Compile, then spot-check against [RESUME_STYLE_GUIDE.md](./RESUME_STYLE_GUIDE.md) and missing-keyword notes.

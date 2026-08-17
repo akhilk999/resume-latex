@@ -159,9 +159,9 @@ Automation, AI, Backend
 
 ### What I Built
 
-Platform can serve multiple client organizations with guaranteed data isolation at the database level, without downtime or data leaks during migration.
+Production multi-tenant platform serving real client organizations (tenants), with guaranteed data isolation at the database level, without downtime or data leaks during migration.
 
-**Ownership:** Likely primary architect (likely contribution)
+**Ownership:** Likely primary architect (likely contribution for RLS design/rollout)
 
 ### Technical Implementation
 
@@ -177,11 +177,11 @@ Migrating live single-tenant app; ~100+ INSERTs unchanged via DEFAULT; table-own
 
 25 tables with tenant_id; 7 rollout phases; rehearsed with synthetic second tenant
 
-Unblocked multi-org SaaS path with defense-in-depth isolation
+Defense-in-depth isolation for a production multi-tenant product. **Manager confirmation (Rohan Mandrekar, verbal):** actual tenants exist on the platform — do not invent count or names.
 
 ### Evidence
 
-schema_postgres.sql RLS policies, dbconn tenant context, organizations/tenant_verticals
+schema_postgres.sql RLS policies, dbconn tenant context, organizations/tenant_verticals; `REFERENCES/REFERENCES.md` (manager tenant confirmation)
 
 ### Tags
 

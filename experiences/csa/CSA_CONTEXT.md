@@ -11,6 +11,7 @@
   - As **Public Relations Chair**: improve org visibility and branding online.
   - As **Secretary**: reform operational points tracking away from spreadsheet/forms chaos into a proper app with auth, RBAC, QR check-in, leaderboards, and semester workflows.
 - **Who uses it:** CSA members and officers (points: TAMU Google `@tamu.edu`). Public website: prospective members, Instagram audience, campus community. Discord: **300+** members across **3** servers (overlapping). Live production systems (not throwaway demos).
+- **Leadership stature:** **Secretary** (and previously **PR Chair**) are **executive / board-level** roles — top-tier org leadership (higher than regular officers), including conflict handling, overall org management, and higher leadership decisions — not limited to tool-building.
 
 ## Personal Ownership
 

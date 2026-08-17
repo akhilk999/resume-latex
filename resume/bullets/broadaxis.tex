@@ -1,13 +1,14 @@
 %------------------------------------------------------------------------------
 % BroadAxis — bullets
 % Toggle in a variant: \baBulletBfalse
-% Sources: experiences/broadaxis/*_BULLETS.md, METRICS.md
+% Sources: experiences/broadaxis/*_BULLETS.md, METRICS.md, REFERENCES/
+% NDA: technical + impact framing; no confidential product contents / tenant names
 %------------------------------------------------------------------------------
 \ifbaBulletA
-  \resumeItem{Built \textbf{Cirklo}, a production event-intelligence and CRM platform for BroadAxis, using \textbf{Python/FastAPI}, \textbf{React}, and \textbf{PostgreSQL} with \textbf{$\sim$100+} REST APIs and a \textbf{25}-table schema across 6 industry verticals.}
+  \resumeItem{Built a production multi-tenant event-intelligence and CRM platform (real client tenants) using \textbf{Python/FastAPI}, \textbf{React}, and \textbf{PostgreSQL} with \textbf{$\sim$100+} REST APIs and a \textbf{25}-table schema across 6 industry verticals.}
 \fi
 \ifbaBulletB
-  \resumeItem{Automated event discovery and enrichment by building scheduled pipelines (search $\rightarrow$ scrape $\rightarrow$ LLM extract $\rightarrow$ dedup/score) with retries, rate limiting, and graceful degradation under App Service timeout constraints.}
+  \resumeItem{Shipped multi-agent discovery and enrichment pipelines on \textbf{Azure} (search $\rightarrow$ scrape $\rightarrow$ LLM extract $\rightarrow$ dedup/score) with retries, rate limiting, and graceful degradation under App Service timeout constraints.}
 \fi
 \ifbaBulletC
   \resumeItem{Shipped \textbf{Azure DevOps CI/CD} (4 pipelines, 10+ steps) deploying frontend (\textbf{Static Web Apps}) and backend (\textbf{App Service}) with health-check gating on every push to main, plus scheduled discovery and enrichment jobs.}

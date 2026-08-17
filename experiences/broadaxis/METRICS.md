@@ -1,6 +1,8 @@
 # Broadaxis — Metrics
 
-Never invent numbers. Values below are taken only from `BROADAXIS_ACCOMPLISHMENTS.md` and `BROADAXIS_SYSTEM_DESIGN.md` (historical extraction). Prefer provenance.
+Never invent numbers. Values below are taken only from `BROADAXIS_ACCOMPLISHMENTS.md`, `BROADAXIS_SYSTEM_DESIGN.md`, and manager confirmation in `REFERENCES/REFERENCES.md`. Prefer provenance.
+
+**Production tenancy (qualitative, confirmed):** Rohan Mandrekar confirmed the product has **actual tenants** (multiple client organizations). No numeric count is available — claim existence only.
 
 
 ---
@@ -167,7 +169,7 @@ Qualitative impact, unverified business outcomes, hypotheticals, or capabilities
 | “Turned hours of manual contact entry … into one-click import” | No measured hours saved or import volume. |
 | “Replaced gut-feel event evaluation” | Process change, not a measured accuracy/ROI lift. |
 | “zero-manual-intervention” discovery/enrichment | Operational intent; exceptions (failures, retries, manual triggers for decay) exist. |
-| “Enabled the platform to serve multiple client organizations” | Multi-tenant **capability** documented; sources also say future tenants beyond BroadAxis. Do not claim production multi-tenant customer count or scale. |
+| Exact tenant / customer organization count or names | Manager (Rohan Mandrekar) confirmed **actual tenants exist** in production. Count and identities are **not** recorded — claim existence only, never invent N or names. |
 | Dashboard stats (leads, pipeline $, win rate, 30-day deltas, etc.) | Features that **compute** these exist; no actual production values are recorded in the source docs. |
 | Per-event ROI “stored as percentage” | Mechanism exists; no example ROI % or lift is given. |
 | Pipeline value / weighted pipeline / conversion analytics | Analytics capabilities only — no reported figures. |

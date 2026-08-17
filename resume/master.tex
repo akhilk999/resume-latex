@@ -6,7 +6,11 @@
 \documentclass{resume}
 \input{bullets/flags}
 
-% Coursework + Skills use class defaults unless overridden (trim from end if tight)
+% Coursework + Skills — inventory (not always best apply PDF); honest breadth
+\renewcommand{\SkillsLanguages}{Python, C++, Go, TypeScript, JavaScript, SQL, Java, Dart, Haskell, HTML/CSS}
+\renewcommand{\SkillsFrameworks}{React, Next.js, FastAPI, Flask, Flutter, PROS, Strands Agents SDK, Tailwind CSS, NumPy, Pandas, Matplotlib}
+\renewcommand{\SkillsCloud}{PostgreSQL, Azure App Service, Azure DevOps, Azure PostgreSQL, Azure Static Web Apps, Azure Blob Storage, AWS (Amazon Bedrock), Supabase, Firebase, GitHub Actions, GCP}
+\renewcommand{\SkillsTools}{Git, GitHub, MCP, Notion, Postman, Node.js, Vercel, VS Code}
 \newcommand{\SkillsContent}{\input{sections/skills}}
 
 \newcommand{\ExperienceEntries}{%

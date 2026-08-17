@@ -4,9 +4,17 @@
 
 Cirklo is a B2B CRM + event-intelligence platform built for BroadAxis. It tracks industry events worth attending or sponsoring, turns event engagement into a CRM pipeline (contacts → deals), automates discovery of new events to evaluate, and runs a social/branding content pipeline around those events.
 
-Target users: B2B business development teams, specifically BroadAxis — a consulting firm focused on AI modernization for government, oil & gas, staffing, private equity, and Microsoft enterprise customers.
+Target users: B2B business development teams. Originally built for BroadAxis — a consulting firm focused on AI modernization for government, oil & gas, staffing, private equity, and Microsoft enterprise customers. **Production status (confirmed by manager Rohan Mandrekar, verbally + LinkedIn recommendation):** the product has **actual tenants** (multiple client organizations using the platform), is **deployed and running on Azure**, and includes a **shipped multi-agent system** (manager framing of the agentic discovery/enrichment/LLM workflows). Do **not** invent a tenant count or name other organizations.
 
 Business problem: Before Cirklo, event tracking and CRM were siloed. Events were tracked in spreadsheets, contacts from events were lost, and there was no systematic way to evaluate which events were worth the investment. The platform automates this entire workflow and connects event attendance directly to the sales pipeline.
+
+## Confidentiality / NDA
+
+Akhil signed an NDA covering Cirklo product contents. For **external** use (applications, public resumes, interviews with other companies, LinkedIn):
+
+- **Safe:** stack/technologies, engineering challenges (timeouts, RLS, scrapers, CI/CD), ownership of Event/CRM engineering, impact framed as “production multi-tenant platform on Azure,” stakeholder presentation, ramp on Azure/multi-agent work.
+- **Avoid disclosing:** proprietary product workflows beyond high-level category, customer/tenant identities, internal business data, confidential domain specifics that are not already public, and any NDA-restricted implementation detail you would not want reproduced outside BroadAxis.
+- **Internal KB (`experiences/broadaxis/`):** may retain technical detail for personal prep; treat as private. Prefer sanitized wording when promoting bullets to `resume/` or speaking externally.
 
 Major subsystems:
 1. **Event Discovery** — Automated web search, scraping, scoring pipeline that finds and evaluates industry events
@@ -246,17 +254,34 @@ Akhil was the primary engineer for the Event and CRM platforms. The Branding pla
 - User management endpoints (list, update, delete, permissions)
 - Theme/UI token system
 
+## Manager / recommendation evidence
+
+**Manager:** Rohan Mandrekar (Akhil reported directly to him).
+
+**LinkedIn recommendation (verbatim themes; full text in `REFERENCES/REFERENCES.md`):**
+
+- Came in with little Azure / multi-agent background; ramped in weeks and shipped working features
+- Structured, methodical design-before-code approach
+- By end of internship: shipped a complete multi-agent system, deployed and running on Azure
+- Presented work to stakeholders and did well
+- Characterized as learns fast and finishes what he starts
+
+**Verbal guidance from Rohan:** Safe to claim the product has **actual tenants** (real client organizations on the platform). Still do not invent counts or names.
+
 ## Constraints
 
 - Team size: ~1–2 engineers on Event/CRM (Akhil primary for Event + CRM; Branding owned by another teammate)
 - Timeline: Internship / build of Cirklo for BroadAxis (see role dates on resume)
 - Technologies: React 19 + Vite, FastAPI (Python), PostgreSQL (prod) / SQLite (dev), Azure (Static Web Apps, App Service B1, PostgreSQL Flexible Server, Blob Storage), Azure DevOps, DeepSeek LLM, curl_cffi + Playwright, Serper / SearXNG
 - Known inaccuracies: Prefer this CONTEXT and confirmed ownership labels over Git history for attribution
+- NDA: see Confidentiality section above — external speakables ≠ full internal KB detail
 
 ## Important Instructions
 
 - Do **not** attribute Branding platform work to Akhil
 - Focus on **Event** and **CRM** ownership for resume and interviews
 - Treat Auth, RBAC, multi-tenant RLS, and `dbconn` dual-database work as **likely** contributions unless evidence is upgraded — do not claim sole ownership
-- Do not invent business metrics (revenue, dollar ROI); use only numbers in `METRICS.md`
+- Do not invent business metrics (revenue, dollar ROI, tenant count); use only numbers in `METRICS.md`
+- **May claim:** production multi-tenant product with actual tenants; Azure-deployed multi-agent system shipped; stakeholder presentation (manager-confirmed)
 - Git history alone is not proof of ownership
+- When writing external resume/interview copy, prefer technical + importance framing over confidential product contents

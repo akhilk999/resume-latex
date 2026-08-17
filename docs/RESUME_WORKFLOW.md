@@ -134,7 +134,11 @@ Emphasizes perception, control, hardware/software integration, real-time constra
 
 ### Product / Solutions Resume
 
-Emphasizes customer outcomes, problem framing, cross-functional delivery, demos, and translating technical capability into value.
+Emphasizes customer outcomes, problem framing, cross-functional delivery, demos, and translating technical capability into value. Enables **Leadership** (CSA Secretary + Aggie Robotics Webmaster as exec board).
+
+### Forward Deployed / Applied Engineering (`fdse`)
+
+Emphasizes stakeholder-embedded SWE: ship operator-facing systems under ambiguity, present to stakeholders, own handoff. Eng-forward — not a PM resume. Use for Palantir FDSE and similar applied roles. Maps from truthful CSA/Broadaxis/Webmaster shipping stories; do not invent travel or on-site consulting.
 
 ### Quant / Trading SWE (usually via `backend` variant)
 

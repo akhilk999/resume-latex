@@ -72,9 +72,11 @@
 
 **Org / Webmaster (May 2025 – present)**
 
-- **aggierobotics.com** — Next.js, React, Tailwind; intended deploy **Cloudflare**; repo **`whooprobotics/website`** (not `aggierobotics/site`). Local branches show real pages (home/outreach/vexu/combat, nav/footer, assets); **not live** yet.
-- **Google Drive** — folder system + document templates (incl. meeting-note templates used by officers/subteams).
-- **Notion** — org-wide workspace: task DBs, subteams, permissions; **~50+** members; Akhil’s push to move off Discord-only tasking.
+- **Executive / board role:** Webmaster is one of **~7 executive** officers (among **~15** officers total) — top-tier org leadership with input on conflicts, overall org management, and higher leadership decisions; partners primarily with the **President**.
+- **aggierobotics.com** — Next.js, React, Tailwind; intended deploy **Cloudflare**; repo **`whooprobotics/website`** (not `aggierobotics/site`). Substantial site content authoring (home/outreach/vexu/combat, nav/footer, assets). **Public launch expected ~late August 2026** (≈2 weeks from 2026-08-08). Until then: do **not** claim the public site is live.
+- **Internal wiki / knowledge base** — in progress under Webmaster scope; do **not** claim shipped/live wiki yet.
+- **Google Drive** — folder system + document templates (incl. meeting-note templates used by officers/subteams). **Shipped / in use.**
+- **Notion** — org-wide workspace: task DBs, subteams, permissions; **~50+** members; Akhil’s push to move off Discord-only tasking. **Shipped / in use.**
 - Media storage research (**Cloud vs NAS**); software permissions controls; officer transfer document templates; meeting notes / attendance support.
 - Planned (not done): points tracker (after another officer defines points), Discord/Notion automations (bot or GitHub Actions).
 - **Executive officer** among **~15 officers / 7 executive**; primarily partners with **President**; input into exec decisions.
@@ -106,6 +108,8 @@
 - Invented path scores beyond CONTEXT-approved figures.
 - **`aggierobotics/site`** as repo — use **`whooprobotics/website`**.
 - Brain heat UI as shipped (library temp API shipped; Brain UI PoC only).
+- **Public `aggierobotics.com` as live** until launch (~late Aug 2026) is confirmed.
+- **Internal wiki/KB as shipped** — still in progress as of 2026-08-08.
 
 ### Git vs memory (paths)
 

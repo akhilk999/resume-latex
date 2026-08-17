@@ -1,0 +1,46 @@
+%==============================================================================
+% VARIANT: Forward Deployed / Applied Engineering
+% Open/build THIS file from resume/:  make fdse
+%
+% Stakeholder-embedded SWE narrative (e.g. Palantir FDSE Commercial).
+% Lead with production ownership + operator-facing systems you shipped.
+% Not a PM resume — still eng-forward.
+%==============================================================================
+
+\documentclass{resume}
+\input{bullets/flags}
+
+% One-page trim: leadership carries CSA outcomes; Points project keeps one technical bullet
+\csaProjBfalse
+\csaProjCfalse
+\csaLeadCfalse
+\rbLeadCfalse
+\khBulletCfalse
+\taBulletBfalse
+
+\renewcommand{\RelevantCoursework}{Software Engineering, Data Structures and Analysis of Algorithms, Programming Languages, Computer Systems, Discrete Mathematics, Linear Algebra, Computer Organization, Introduction to C++}
+
+\renewcommand{\SkillsLanguages}{Python, TypeScript, JavaScript, SQL, C++, Go, HTML/CSS}
+\renewcommand{\SkillsFrameworks}{FastAPI, React, Next.js, Flask, Tailwind CSS}
+\renewcommand{\SkillsCloud}{PostgreSQL, Azure App Service, Azure DevOps, Azure Static Web Apps, Azure Blob Storage, Supabase, AWS (Amazon Bedrock), Firebase}
+\renewcommand{\SkillsTools}{Git, GitHub, Notion, Postman, Vercel, VS Code, Node.js}
+\newcommand{\SkillsContent}{\input{sections/skills}}
+
+\newcommand{\ExperienceEntries}{%
+  \input{sections/experience/broadaxis}%
+  \input{sections/experience/konfhub}%
+  \input{sections/experience/ta}%
+}
+
+\ShowLeadershiptrue
+\newcommand{\LeadershipEntries}{%
+  \input{sections/leadership/csa}%
+  \input{sections/leadership/robotics}%
+}
+
+% Technical proof of Secretary-shipped Points platform (operators use it in production).
+\newcommand{\ProjectEntries}{%
+  \input{sections/projects/csa}%
+}
+
+\input{main}

@@ -48,7 +48,7 @@
 
 ## Recommended variant
 
-- Same as Commercial FDSE: customer-impact full-stack/backend blend
+- **`fdse`** (same as Commercial) — customer-impact applied SWE
 - Do not invent clearance or gov experience
 
 ## Bullets to enable / emphasize

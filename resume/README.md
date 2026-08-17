@@ -18,6 +18,7 @@ resume/
 ├── ai.tex
 ├── robotics.tex
 ├── product.tex
+├── fdse.tex                 # Forward deployed / applied engineering
 ├── sections/
 │   ├── header.tex           # Name + contact
 │   ├── education.tex        # Uses \RelevantCoursework from the variant
@@ -47,7 +48,7 @@ latexmk -pdf -jobname=backend backend.tex
 make all
 ```
 
-Outputs: `master.pdf`, `backend.pdf`, `ai.pdf`, `robotics.pdf`, `product.pdf`.
+Outputs: `master.pdf`, `backend.pdf`, `ai.pdf`, `robotics.pdf`, `product.pdf`, `fdse.pdf`.
 
 ## How customization works
 
@@ -69,7 +70,8 @@ Each of `backend.tex` / `master.tex` / `ai.tex` / `robotics.tex` / `product.tex`
    ```
    To drop an entire skills row, redefine `\SkillsContent` in the variant.
 4. **Experience / projects / order** — edit `\ExperienceEntries` and `\ProjectEntries`.
-5. **Leadership** — set `\ShowLeadershiptrue` and list entries in `\LeadershipEntries`.
+5. **Leadership** — set `\ShowLeadershiptrue` and list entries in `\LeadershipEntries` (CSA Secretary + Aggie Robotics Webmaster on `product` / `fdse`).
+6. **`fdse` variant** — Palantir-style applied/forward-deployed SWE: eng-forward stakeholder shipping; use instead of `product` when the role is embedded customer engineering, not PM.
 
 **Space rule:** within coursework and each skills line, put must-keep items first and cut from the end when the PDF spills past one page.
 

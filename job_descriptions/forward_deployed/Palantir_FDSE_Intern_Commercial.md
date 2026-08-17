@@ -51,7 +51,8 @@
 
 ## Recommended variant
 
-- `product` / solutions-flavored `full_stack` blend; emphasize CSA + Broadaxis customer impact
+- **`fdse`** (primary) — stakeholder/operator shipping, eng-forward
+- `product` if the posting reads more PM/solutions than applied SWE
 - Resume narrative: “ship under ambiguity with users,” not pure infra scale
 
 ## Bullets to enable / emphasize

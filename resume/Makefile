@@ -4,7 +4,7 @@
 # Entry points live NEXT TO resume.cls (backend.tex, master.tex, …).
 # Do not compile files under variants/ — those are legacy shims.
 
-VARIANTS := master backend ai robotics product
+VARIANTS := master backend ai robotics product fdse
 LATEXMK  := latexmk -pdf -interaction=nonstopmode -halt-on-error
 
 .PHONY: all clean $(VARIANTS)

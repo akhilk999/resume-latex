@@ -50,6 +50,7 @@ Suggested filename: `Company_Role_YYYY-MM.md` (or `Company_Role_sample.md` / `*_
 | [backend/CTC_SWE_Intern_Summer2027.md](backend/CTC_SWE_Intern_Summer2027.md) | CTC SE Internship Summer 2027 |
 | [backend/Serval_SWE_Intern_Backend.md](backend/Serval_SWE_Intern_Backend.md) | Serval SWE Intern Backend |
 | [backend/WesternDigital_SWE_Intern_Summer2027.md](backend/WesternDigital_SWE_Intern_Summer2027.md) | Western Digital SWE Internship Summer 2027 |
+| [backend/Roblox_SWE_Intern_Summer2027.md](backend/Roblox_SWE_Intern_Summer2027.md) | Roblox SWE Intern Summer 2027 |
 
 ### Full Stack
 
