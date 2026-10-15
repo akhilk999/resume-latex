@@ -35,10 +35,10 @@ _(Not applicable.)_
 
 # Product
 
-- As Public Relations Chair, launched a branded CSA web presence that improved recruitment by ~20% versus Instagram-only outreach
-- As Secretary, redesigned membership points operations from spreadsheet/forms into an authenticated product tracking 400+ events per semester for 250+ members
+- Replaced Sheets/Forms membership ops with a production Next.js/Supabase platform that automates points for 400+ events per semester across 250+ members
+- Shipped csatamu.org as Public Relations Chair, improving recruitment by 20% versus Instagram-only outreach
 - Co-designed CSA’s Discord verification bot with a teammate and managed GCP hosting so automated onboarding runs for 300+ members across three Discord servers
-- Wrote onboarding and operations documentation so future officers can administer points without relying on tribal Sheets knowledge
+- Wrote transfer docs and simplified check-in/roster workflows so non-engineer officers can run semester ops without the original builder
 
 # Quant / Trading SWE
 
@@ -50,11 +50,11 @@ _(No trading domain — data integrity / analytical ops emphasis only.)_
 
 # Forward Deployed
 
-- Embedded with CSA officers as Secretary/PR Chair to replace tribal Sheets/Forms workflows with a production points product officers actually operate
+- Replaced Sheets/Forms membership ops with a production points platform officers actually run, automating tracking for 400+ events per semester and 250+ members
 - Shipped QR/officer check-in, roster import, and admin consoles so non-engineer operators could run attendance and semester lifecycle without developer intervention
-- Wrote architecture and day-to-day ops transfer docs so future officers can administer the system without relying on the original builder
+- Wrote transfer docs and simplified check-in/roster workflows so non-engineer officers can run semester ops without the original builder
 - Co-designed Discord verification UX with a teammate and owned GCP hosting so onboarding automation stays up for 300+ members across three servers
-- As PR Chair, shipped a public site aimed at recruitment visibility (~20% improvement vs Instagram-only) — stakeholder outcome over pure engineering novelty
+- Shipped csatamu.org as Public Relations Chair, improving recruitment by 20% versus Instagram-only outreach
 
 # Infra / Platform
 
